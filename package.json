@@ -19,8 +19,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+
     "test": "react-scripts jest --runInBand --verbose --detectOpenHandles --passWithNoTests",
     "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^7.0.0"
   }
 }
