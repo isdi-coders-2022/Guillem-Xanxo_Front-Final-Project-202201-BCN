@@ -1,8 +1,8 @@
 const TripsCronoPage = () => {
   return (
     <>
-      <h1>Title and user block</h1>
-      <h2>Trips catwalk</h2>
+      <h1>Transporta't Pallars</h1>
+      <p>Trips catwalk</p>
     </>
   );
 };

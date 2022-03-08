@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "coverage": "react-scripts test --coverage"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.24",
     "husky": "^7.0.0"
   }
 }
