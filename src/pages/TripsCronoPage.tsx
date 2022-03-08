@@ -1,7 +1,13 @@
-const TripsCronoPage = () => {
+import { useNavigate } from "react-router-dom";
+import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
+
+const TripsCronoPage = (): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <h1>Transporta't Pallars</h1>
+      <HeaderComponent actionOnClick={navigate("/viatges/crono")} />
+
       <p>Trips catwalk</p>
     </>
   );
