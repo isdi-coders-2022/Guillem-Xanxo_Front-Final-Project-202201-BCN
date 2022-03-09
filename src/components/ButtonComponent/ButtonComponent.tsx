@@ -1,4 +1,6 @@
 import { ButtonUsuari } from "./ButtonComponent.styles";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ButtonProps {
   className: string;
@@ -23,6 +25,7 @@ const Button = ({
           }
         >
           {text}
+          <FontAwesomeIcon icon={faUser} />
         </ButtonUsuari>
       )}
     </>
