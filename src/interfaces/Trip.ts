@@ -1,4 +1,4 @@
-export interface TripCard {
+export interface Trip {
   origen: string;
   desti: string;
   places: number;
@@ -6,4 +6,5 @@ export interface TripCard {
   horaSortida: number;
   comentaris: string;
   dones: boolean;
+  id: string;
 }
