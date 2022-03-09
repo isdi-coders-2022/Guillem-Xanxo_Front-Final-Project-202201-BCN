@@ -4,7 +4,7 @@ interface TripCardProps {
   trip: Trip;
 }
 export const TripCard = ({
-  trip: { origen, desti, places, data, horaSortida, comentaris, dones, id },
+  trip: { origen, desti, places, horaSortida, comentaris, dones, id },
 }: TripCardProps): JSX.Element => {
   const location = useLocation();
 
