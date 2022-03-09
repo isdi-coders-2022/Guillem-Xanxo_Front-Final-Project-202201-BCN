@@ -4,7 +4,7 @@ interface ButtonProps {
   className: string;
   text: string;
   type: string;
-  actionOnClick: (goto: string) => void;
+  actionOnClick: () => void;
 }
 
 const Button = ({
@@ -18,9 +18,9 @@ const Button = ({
       {type === "usuari" && (
         <ButtonUsuari
           className={className}
-          onClick={(): UIEvent => {
-            actionOnClick;
-          }}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
         >
           {text}
         </ButtonUsuari>

@@ -1,12 +1,13 @@
 import Button from "../ButtonComponent/ButtonComponent";
+import { useNavigate } from "react-router-dom";
 
-interface HeaderComponentProps {
-  actionOnClick: (goto: string) => void;
-}
+const HeaderComponent = (): JSX.Element => {
+  const navigate = useNavigate();
 
-const HeaderComponent = ({
-  actionOnClick,
-}: HeaderComponentProps): JSX.Element => {
+  const goToHome = () => {
+    navigate("/viatges/crono");
+  };
+
   return (
     <>
       <h1 className="title">Transporta't Pallars</h1>
@@ -14,7 +15,7 @@ const HeaderComponent = ({
         className="button-usuari"
         type="usuari"
         text=""
-        actionOnClick={actionOnClick}
+        actionOnClick={goToHome}
       />
     </>
   );
