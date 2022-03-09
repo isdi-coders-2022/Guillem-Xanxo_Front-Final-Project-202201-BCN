@@ -1,7 +1,10 @@
-const TripsCronoPage = () => {
+import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
+
+const TripsCronoPage = (): JSX.Element => {
   return (
     <>
-      <h1>Transporta't Pallars</h1>
+      <HeaderComponent />
+
       <p>Trips catwalk</p>
     </>
   );
