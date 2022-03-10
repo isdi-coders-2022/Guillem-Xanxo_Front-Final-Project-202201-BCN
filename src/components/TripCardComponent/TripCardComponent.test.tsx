@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { TripCard } from "./TripCardComponent";
+import { TripCardComponent } from "./TripCardComponent";
 
 describe("Given a TripCardComponent component", () => {
   describe("When it receives a Trip", () => {
@@ -18,7 +18,7 @@ describe("Given a TripCardComponent component", () => {
 
       render(
         <BrowserRouter>
-          <TripCard trip={trip} />
+          <TripCardComponent trip={trip} />
         </BrowserRouter>
       );
 

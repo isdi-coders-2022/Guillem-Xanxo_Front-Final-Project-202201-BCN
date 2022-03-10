@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import TripsCronoPage from "./pages/TripsCronoPage";
+import ShowTripsPage from "./pages/ShowTripsPage";
 
 function App() {
   const AppAppearence = styled.div`
@@ -14,11 +14,11 @@ function App() {
   return (
     <>
       <AppAppearence>
-        <TripsCronoPage></TripsCronoPage>
+        <ShowTripsPage></ShowTripsPage>
       </AppAppearence>
       <Routes>
-        <Route path="/*" element={<TripsCronoPage />}></Route>
-        <Route path="/viatges/crono" element={<TripsCronoPage />}></Route>
+        <Route path="/*" element={<ShowTripsPage />}></Route>
+        <Route path="/viatges/crono" element={<ShowTripsPage />}></Route>
       </Routes>
       ;
     </>
