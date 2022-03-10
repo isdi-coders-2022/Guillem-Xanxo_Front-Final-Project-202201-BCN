@@ -1,13 +1,10 @@
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
-import TripCatwalkComponent from "../components/TripCatwalkComponent/TripCatwalkComponent";
+// import TripCatwalkComponent from "../components/TripCatwalkComponent/TripCatwalkComponent";
 
 const ShowTripsPage = (): JSX.Element => {
   return (
     <>
       <HeaderComponent />
-      <TripCatwalkComponent trips={estadotrips} />
-
-      <p>Trips catwalk</p>
     </>
   );
 };
