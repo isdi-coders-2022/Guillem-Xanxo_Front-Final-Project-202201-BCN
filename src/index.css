@@ -24,3 +24,13 @@ code {
 .categoria_negreta {
   font-weight: bold;
 }
+
+.card-properties {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-properties_big {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

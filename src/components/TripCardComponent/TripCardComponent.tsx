@@ -14,18 +14,31 @@ export const TripCardComponent = ({
     <>
       <TripCardComponentStyles>
         <div className="trip-card">
-          <p className="categoria">Origen:</p>
-          <p className="categoria_negreta">{origen}</p>
-          <p className="categoria">Destí:</p>
-          <p className="categoria_negreta">{desti}</p>
-          <p className="categoria">Places:</p>
-          <p className="categoria_negreta">{places}</p>
-          <p className="categoria">Hora sortida:</p>
-          <p className="categoria_negreta">{horaSortida}</p>
+          <article className="card-properties_big">
+            <article className="card-properties">
+              <p className="categoria">Origen:</p>
+              <p className="categoria_negreta"> {origen}</p>
+            </article>
+            <article className="card-properties">
+              <p className="categoria">Hora:</p>
+              <p className="categoria_negreta"> {horaSortida}</p>
+            </article>
+          </article>
+          <article className="card-properties_big">
+            <article className="card-properties">
+              <p className="categoria">Destí:</p>
+              <p className="categoria_negreta"> {desti}</p>
+            </article>
+            <article className="card-properties">
+              <p className="categoria">Places:</p>
+              <p className="categoria_negreta"> {places}</p>
+            </article>
+          </article>
+
           {location.pathname === id && (
             <>
               <p className="categoria_negreta">Comentaris:</p>
-              <p className="categoria">{comentaris}</p>
+              <p className="categoria"> {comentaris}</p>
             </>
           )}
           {dones === true && (
