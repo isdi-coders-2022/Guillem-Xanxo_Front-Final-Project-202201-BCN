@@ -21,6 +21,10 @@ code {
   position: absolute;
 }
 
+p {
+  margin: 3px;
+}
+
 .categoria_negreta {
   font-weight: bold;
 }
