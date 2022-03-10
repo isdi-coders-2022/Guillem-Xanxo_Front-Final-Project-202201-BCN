@@ -39,4 +39,29 @@ describe("Given a tripsReducer function", () => {
       expect(newState).toEqual(tripsToGet);
     });
   });
+
+  describe("When it is called with an action that does not exist", () => {
+    test("Then it should return the current trips array, default in switch", () => {
+      const currentTrips: Trip[] = [
+        {
+          origen: "Barcelona",
+          desti: "Sort",
+          places: 3,
+          horaSortida: 18,
+          comentaris: "S'accepten animals",
+          dones: false,
+          data: "2018-02-12 19:23:45",
+          id: "1",
+        },
+      ];
+      const action = {
+        type: "none",
+        trips: currentTrips,
+      };
+
+      const newTripArray = tripsReducer(currentTrips, action);
+
+      expect(newTripArray).toEqual(currentTrips);
+    });
+  });
 });
