@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
+
 import ShowTripsPage from "./pages/ShowTripsPage";
 
 function App() {
