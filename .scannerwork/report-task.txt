@@ -2,5 +2,5 @@ projectKey=pallarsfront
 serverUrl=http://localhost:9000
 serverVersion=9.2.4.50792
 dashboardUrl=http://localhost:9000/dashboard?id=pallarsfront
-ceTaskId=AX9vURUhl0jC--DG9LJL
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX9vURUhl0jC--DG9LJL
+ceTaskId=AX90Hz4Sl0jC--DG9LJO
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX90Hz4Sl0jC--DG9LJO
