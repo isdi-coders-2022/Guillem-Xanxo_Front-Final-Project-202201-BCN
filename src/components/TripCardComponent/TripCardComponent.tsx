@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { Trip } from "../../interfaces/Trip";
-interface TripCardProps {
+interface TripCardComponentProps {
   trip: Trip;
 }
-export const TripCard = ({
+export const TripCardComponent = ({
   trip: { origen, desti, places, horaSortida, comentaris, dones, id },
-}: TripCardProps): JSX.Element => {
+}: TripCardComponentProps): JSX.Element => {
   const location = useLocation();
 
   return (
