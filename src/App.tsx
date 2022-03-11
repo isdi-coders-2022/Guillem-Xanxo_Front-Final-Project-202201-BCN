@@ -10,7 +10,6 @@ function App() {
         <Route path="/*" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crono" element={<ShowTripsPage />}></Route>
       </Routes>
-      ;
     </>
   );
 }
