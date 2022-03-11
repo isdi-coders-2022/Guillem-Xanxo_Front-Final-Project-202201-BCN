@@ -17,5 +17,4 @@ export const ButtonUsuari = styled(ButtonGeneric)`
   background-color: white;
   margin: 21px;
   margin-left: 40px;
-  position: relative;
 `;
