@@ -1,6 +1,6 @@
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { deleteThisTripAction, getAllTripsAction } from "../actions/actionCreators";
+import { getAllTripsAction } from "../actions/actionCreators";
 
 export const getAllTripsThunk = async (
   dispatch: ThunkDispatch<void, unknown, AnyAction>
@@ -12,6 +12,7 @@ export const getAllTripsThunk = async (
   dispatch(getAllTripsAction(TripsArray));
 };
 
+/*
 export const deleteTripThunk = 
   (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
@@ -23,4 +24,4 @@ export const deleteTripThunk =
     if(response.ok) {
       dispatchEvent(deleteThisTripAction(id));
     }
-  }
+  } */
