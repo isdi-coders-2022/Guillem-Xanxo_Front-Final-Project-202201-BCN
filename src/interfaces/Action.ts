@@ -7,3 +7,7 @@ export interface Action {
 export interface TripsAction extends Action {
   trips: Trip[];
 }
+
+export interface deleteTripAction extends Action {
+  id: string;
+}

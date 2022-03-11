@@ -1,21 +1,17 @@
 import actionTypes from "./actionTypes";
 import { Trip } from "../../interfaces/Trip";
-import { Action } from "../../interfaces/Action";
+import { Action, TripsAction, deleteTripAction } from "../../interfaces/Action";
 
-interface getAllTripsActionProps extends Action {
-  trips: Trip[];
-}
-
-interface deleteThisTripActionProps extends Action {
+export interface deleteThisTripActionProps extends Action {
   id: string;
 }
 
-export const getAllTripsAction = (trips: Trip[]): getAllTripsActionProps => ({
+export const getAllTripsAction = (trips: Trip[]): TripsAction => ({
   type: actionTypes.getAllTrips,
   trips,
 });
 
-export const deleteThisTrip = (id: string): deleteThisTripActionProps => ({
+export const deleteThisTripAction = (id: string): deleteTripAction => ({
   type: actionTypes.deleteThisTrip,
   id,
 });
