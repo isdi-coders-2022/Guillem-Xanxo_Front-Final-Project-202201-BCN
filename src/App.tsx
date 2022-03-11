@@ -9,6 +9,13 @@ function App() {
       <Routes>
         <Route path="/*" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crono" element={<ShowTripsPage />}></Route>
+        <Route path="/viatges/detall" element={<></>}></Route>
+        <Route path="/viatges/desti" element={<></>}></Route>
+        <Route path="/viatges/origen" element={<></>}></Route>
+        <Route path="/usuari/login" element={<></>}></Route>
+        <Route path="/usuari/registre" element={<></>}></Route>
+        <Route path="/usuari/viatges" element={<></>}></Route>
+        <Route path="/usuari/viatges/detall" element={<></>}></Route>
       </Routes>
     </>
   );
