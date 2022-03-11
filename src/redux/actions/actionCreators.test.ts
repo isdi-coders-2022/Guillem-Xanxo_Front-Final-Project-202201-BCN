@@ -41,7 +41,7 @@ describe("Given a getAllTripsAction action", () => {
 
 describe("Given a deleteThisTripAction action", () => {
   describe("When it receives an id", () => {
-    test.only("Then it should return an action with type 'delete-this-trip' and the trip id as another property", () => {
+    test("Then it should return an action with type 'delete-this-trip' and the trip id as another property", () => {
       const TripIdToDelete = "1";
 
       const expectedAction = {
