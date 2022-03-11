@@ -11,3 +11,17 @@ export const getAllTripsThunk = async (
   const TripsArray = TripListResponse.viatges;
   dispatch(getAllTripsAction(TripsArray));
 };
+
+/*
+export const deleteTripThunk = 
+  (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}viatges/eliminar/${id}`),
+      {
+        method: "DELETE",
+      }
+    );
+    if(response.ok) {
+      dispatchEvent(deleteThisTripAction(id));
+    }
+  } */
