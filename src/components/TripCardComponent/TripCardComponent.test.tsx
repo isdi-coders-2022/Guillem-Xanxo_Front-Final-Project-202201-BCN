@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { store } from "../../redux/store";
 import { TripCardComponent } from "./TripCardComponent";
 
 describe("Given a TripCardComponent component", () => {
@@ -18,7 +20,9 @@ describe("Given a TripCardComponent component", () => {
 
       render(
         <BrowserRouter>
-          <TripCardComponent trip={trip} />
+          <Provider store={store}>
+            <TripCardComponent trip={trip} />
+          </Provider>
         </BrowserRouter>
       );
 

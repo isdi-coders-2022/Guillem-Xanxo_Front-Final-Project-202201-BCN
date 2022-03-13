@@ -28,6 +28,17 @@ const Button = ({
           <FontAwesomeIcon icon={faUser} />
         </ButtonUsuari>
       )}
+
+      {type === "delete" && (
+        <ButtonUsuari
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+        </ButtonUsuari>
+      )}
     </>
   );
 };
