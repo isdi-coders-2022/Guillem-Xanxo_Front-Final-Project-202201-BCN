@@ -1,5 +1,8 @@
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { Trip } from "../../interfaces/Trip";
+import { deleteTripThunk } from "../../redux/thunks/tripsThunks";
+import Button from "../ButtonComponent/ButtonComponent";
 import { TripCardComponentStyles } from "./TripCardComponent.styles";
 
 interface TripCardComponentProps {
@@ -9,6 +12,11 @@ export const TripCardComponent = ({
   trip: { origen, desti, places, horaSortida, comentaris, dones, id },
 }: TripCardComponentProps): JSX.Element => {
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const deleteTrip = (id: string) => {
+    dispatch(deleteTripThunk(id));
+  };
 
   return (
     <>
@@ -41,6 +49,12 @@ export const TripCardComponent = ({
               <p className="categoria"> {comentaris}</p>
             </>
           )}
+          <Button
+            type="delete"
+            className="delete-button"
+            text="Borrar"
+            actionOnClick={() => deleteTrip(id)}
+          />
           {dones === true && (
             <p className="categoria_negreta">
               Aquest viatge és exclusiu per a passetgeres
