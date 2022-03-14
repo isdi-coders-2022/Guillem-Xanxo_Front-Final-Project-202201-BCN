@@ -1,10 +1,14 @@
 import { Trip } from "../../interfaces/Trip";
 import actionTypes from "../actions/actionTypes";
-import { deleteTripAction, TripsAction } from "../../interfaces/Action";
+import {
+  deleteTripAction,
+  TripsAction,
+  createTripAction,
+} from "../../interfaces/Action";
 
 const tripsReducer = (
   currentTrips: Trip[] = [],
-  action: TripsAction | deleteTripAction
+  action: TripsAction | deleteTripAction | createTripAction
 ) => {
   let newTripArray: Trip[];
 
@@ -17,6 +21,10 @@ const tripsReducer = (
       newTripArray = currentTrips.filter(
         (trip: Trip) => trip.id !== (action as deleteTripAction).id
       );
+      break;
+
+    case actionTypes.createTrip:
+      newTripArray = [...currentTrips, (action as createTripAction).newTrip];
       break;
 
     default:

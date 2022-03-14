@@ -62,7 +62,7 @@ describe("Given a deleteThisTripAction action", () => {
 
 describe("Given a createThisTripAction action", () => {
   describe("When it receives an object like Trip", () => {
-    test.only("Then it should return an action with type 'create-trip' and the new trip as another property", () => {
+    test("Then it should return an action with type 'create-trip' and the new trip as another property", () => {
       const newTrip = {
         origen: "Barcelona",
         desti: "Sort",
