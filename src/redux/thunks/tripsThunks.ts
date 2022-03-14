@@ -34,13 +34,16 @@ export const deleteTripThunk =
 export const createTripThunk =
   (newTrip: Trip) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}viatges/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTrip),
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}viatges/crear`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTrip),
+      }
+    );
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));
     }
