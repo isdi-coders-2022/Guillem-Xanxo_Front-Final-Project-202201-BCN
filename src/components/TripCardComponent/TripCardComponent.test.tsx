@@ -31,4 +31,33 @@ describe("Given a TripCardComponent component", () => {
       expect(tripOrigen).toBeInTheDocument();
     });
   });
+
+  describe("When it renders a trip with property 'dones' as true", () => {
+    test.only("Then it should display a the text: Aquest viatge és exclusiu per a passetgeres", async () => {
+      const trip = {
+        origen: "Barcelona",
+        desti: "Sort",
+        places: 3,
+        horaSortida: 18,
+        comentaris: "S'accepten animals",
+        dones: true,
+        data: "2018-02-12 19:23:45",
+        id: "1",
+      };
+
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <TripCardComponent trip={trip} />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const dones = screen.getByText(
+        "Aquest viatge és exclusiu per a passetgeres"
+      );
+
+      expect(dones).toBeInTheDocument();
+    });
+  });
 });
