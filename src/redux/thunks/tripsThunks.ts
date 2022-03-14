@@ -8,7 +8,10 @@ import {
 export const getAllTripsThunk = async (
   dispatch: ThunkDispatch<void, unknown, AnyAction>
 ) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}viatges/crono`);
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}viatges/crono`,
+    { method: "GET" }
+  );
 
   const TripListResponse = await response.json();
   const TripsArray = TripListResponse.viatges;
