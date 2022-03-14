@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../../redux/store";
@@ -33,19 +32,18 @@ describe("Given a TripCardComponent component", () => {
     });
   });
 
-  describe("When it renders a trip card", () => {
-    test("Then it should display a button that call an action when clicked", async () => {
+  describe("When it renders a trip with property 'dones' as true", () => {
+    test.only("Then it should display a the text: Aquest viatge és exclusiu per a passetgeres", async () => {
       const trip = {
         origen: "Barcelona",
         desti: "Sort",
         places: 3,
         horaSortida: 18,
         comentaris: "S'accepten animals",
-        dones: false,
+        dones: true,
         data: "2018-02-12 19:23:45",
         id: "1",
       };
-      const action = jest.fn();
 
       render(
         <BrowserRouter>
@@ -54,11 +52,12 @@ describe("Given a TripCardComponent component", () => {
           </Provider>
         </BrowserRouter>
       );
-      const buttonToClick = await screen.findByRole("button");
 
-      await userEvent.click(buttonToClick);
+      const dones = screen.getByText(
+        "Aquest viatge és exclusiu per a passetgeres"
+      );
 
-      expect(action).toHaveBeenCalled();
+      expect(dones).toBeInTheDocument();
     });
   });
 });
