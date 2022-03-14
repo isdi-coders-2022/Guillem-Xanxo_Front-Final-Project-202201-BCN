@@ -33,7 +33,7 @@ describe("Given a TripCardComponent component", () => {
   });
 
   describe("When it renders a trip with property 'dones' as true", () => {
-    test.only("Then it should display a the text: Aquest viatge és exclusiu per a passetgeres", async () => {
+    test("Then it should display a the text: Aquest viatge és exclusiu per a passetgeres", async () => {
       const trip = {
         origen: "Barcelona",
         desti: "Sort",
