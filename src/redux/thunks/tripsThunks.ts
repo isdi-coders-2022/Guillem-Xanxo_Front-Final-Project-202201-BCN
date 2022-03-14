@@ -1,6 +1,8 @@
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
+import { Trip } from "../../interfaces/Trip";
 import {
+  createThisTripAction,
   deleteThisTripAction,
   getAllTripsAction,
 } from "../actions/actionCreators";
@@ -26,5 +28,20 @@ export const deleteTripThunk =
     );
     if (response.ok) {
       dispatch(deleteThisTripAction(id));
+    }
+  };
+
+export const createTripThunk =
+  (newTrip: Trip) =>
+  async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}viatges/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTrip),
+    });
+    if (response.ok) {
+      dispatch(createThisTripAction(newTrip));
     }
   };
