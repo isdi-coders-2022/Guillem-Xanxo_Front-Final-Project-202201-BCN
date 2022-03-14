@@ -1,6 +1,8 @@
 
 const CreateFormComponent = () => {
-  return();
+  return(
+    <></>;
+  );
 };
 
-eport default CreateFormComponent;
+export default CreateFormComponent;
