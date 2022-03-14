@@ -2,5 +2,5 @@ projectKey=pallarsfront_GuillemXanxo
 serverUrl=http://localhost:9000
 serverVersion=9.2.4.50792
 dashboardUrl=http://localhost:9000/dashboard?id=pallarsfront_GuillemXanxo
-ceTaskId=AX-HpriNl0jC--DG9LJj
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX-HpriNl0jC--DG9LJj
+ceTaskId=AX-I9A14l0jC--DG9LJy
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX-I9A14l0jC--DG9LJy
