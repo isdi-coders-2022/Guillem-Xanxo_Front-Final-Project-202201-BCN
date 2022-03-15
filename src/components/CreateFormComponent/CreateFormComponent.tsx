@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, SyntheticEvent } from "react";
 import { useDispatch } from "react-redux";
 import { Trip } from "../../interfaces/Trip";
 import { createTripThunk } from "../../redux/thunks/tripsThunks";
