@@ -2,7 +2,7 @@ import { useState, SyntheticEvent } from "react";
 import { useDispatch } from "react-redux";
 import { Trip } from "../../interfaces/Trip";
 import { createTripThunk } from "../../redux/thunks/tripsThunks";
-import Button from "../ButtonComponent/ButtonComponent";
+import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
 
 const CreateFormComponent = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -115,12 +115,15 @@ const CreateFormComponent = (): JSX.Element => {
             onChange={changeData}
           />
         </div>
-        <Button
+
+        <ButtonNoAction
           type="submit"
+          className="submit-button"
           disabled={!isFilled}
           src={"Confirm"}
           alt="Crea el viatge"
-        ></Button>
+          text="Crea viatge"
+        ></ButtonNoAction>
       </form>
     </>
   );

@@ -13,19 +13,12 @@ const ButtonNoAction = ({
   className,
   text,
   type,
-  alt,
-  src,
   disabled,
 }: ButtonNoActionProps): JSX.Element => {
   return (
     <>
       {type === "submit" && (
-        <ButtonSubmit
-          className={className}
-          alt={alt}
-          src={src}
-          disabled={disabled}
-        >
+        <ButtonSubmit className={className} disabled={disabled}>
           {text}
         </ButtonSubmit>
       )}
