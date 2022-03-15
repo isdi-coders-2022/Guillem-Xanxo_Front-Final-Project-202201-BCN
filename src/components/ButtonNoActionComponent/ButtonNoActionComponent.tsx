@@ -1,3 +1,5 @@
+import { ButtonSubmit } from "./ButtonNoActionComponent.styles";
+
 interface ButtonNoActionProps {
   className?: string;
   text?: string;
