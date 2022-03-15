@@ -4,9 +4,7 @@ interface ButtonNoActionProps {
   className?: string;
   text?: string;
   type?: string;
-  alt?: string;
   disabled?: boolean;
-  src?: string;
 }
 
 const ButtonNoAction = ({

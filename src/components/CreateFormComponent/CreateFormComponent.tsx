@@ -120,8 +120,6 @@ const CreateFormComponent = (): JSX.Element => {
           type="submit"
           className="submit-button"
           disabled={!isFilled}
-          src={"Confirm"}
-          alt="Crea el viatge"
           text="Crea viatge"
         ></ButtonNoAction>
       </form>

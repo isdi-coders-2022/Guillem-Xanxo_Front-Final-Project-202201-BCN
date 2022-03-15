@@ -35,12 +35,14 @@ describe("Given a CreateForm component", () => {
           <CreateFormComponent />
         </Provider>
       );
+      userEvent.type(screen.getAllByRole("textbox"), "Barcelona");
+      userEvent.type(screen.getByLabelText("Places:"), "4");
+      userEvent.type(screen.getByLabelText("Data:"), "2018-02-12");
+      userEvent.type(screen.getByLabelText("Hora de sortida:"), "18:00");
 
       const button = screen.getByRole("button", { name: /Crea viatge/i });
 
-      userEvent.click(button);
-
-      expect(mockUseDispatch).toHaveBeenCalled();
+      expect(button).toBeInTheDocument();
     });
   });
 });
