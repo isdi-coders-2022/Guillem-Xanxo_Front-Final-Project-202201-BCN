@@ -27,12 +27,16 @@ const CreateFormComponent = (): JSX.Element => {
     formData.places !== 0 &&
     formData.horaSortida !== 0;
 
-  const changeData = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const changeData = (
+    event:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setFormData({
       ...formData,
       [event.target.id]:
         event.target.type === "checkbox"
-          ? event.target.checked
+          ? (event as React.ChangeEvent<HTMLInputElement>).target.checked
           : event.target.value,
     });
   };
