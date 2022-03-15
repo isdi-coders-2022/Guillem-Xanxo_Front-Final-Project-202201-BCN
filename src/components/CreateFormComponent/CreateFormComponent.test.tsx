@@ -28,14 +28,15 @@ describe("Given a CreateForm component", () => {
     });
   });
 
-  describe("When it is clicked on the rendered button", () => {
-    test("Then it should call the dispatch function", () => {
+  describe("When it is filled with the required fields", () => {
+    test("Then it should display the submit button", () => {
       render(
         <Provider store={store}>
           <CreateFormComponent />
         </Provider>
       );
-      userEvent.type(screen.getAllByRole("textbox"), "Barcelona");
+      userEvent.type(screen.getByLabelText("Origen:"), "Barcelona");
+      userEvent.type(screen.getByLabelText("Destí:"), "Sort");
       userEvent.type(screen.getByLabelText("Places:"), "4");
       userEvent.type(screen.getByLabelText("Data:"), "2018-02-12");
       userEvent.type(screen.getByLabelText("Hora de sortida:"), "18:00");
