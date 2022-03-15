@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import CreateFormComponent from "./CreateFormComponent";
@@ -24,6 +25,22 @@ describe("Given a CreateForm component", () => {
       const text = screen.getAllByRole("textbox");
 
       expect(text).toHaveLength(3);
+    });
+  });
+
+  describe("When it is clicked on the rendered button", () => {
+    test("Then it should call the dispatch function", () => {
+      render(
+        <Provider store={store}>
+          <CreateFormComponent />
+        </Provider>
+      );
+
+      const button = screen.getByRole("button", { name: /Crea viatge/i });
+
+      userEvent.click(button);
+
+      expect(mockUseDispatch).toHaveBeenCalled();
     });
   });
 });
