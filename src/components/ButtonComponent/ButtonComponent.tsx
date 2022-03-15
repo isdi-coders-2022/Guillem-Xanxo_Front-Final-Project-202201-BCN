@@ -39,6 +39,17 @@ const Button = ({
           {text}
         </ButtonUsuari>
       )}
+
+      {type === "crear-viatge" && (
+        <ButtonUsuari
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+        </ButtonUsuari>
+      )}
     </>
   );
 };

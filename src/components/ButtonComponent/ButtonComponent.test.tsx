@@ -22,7 +22,7 @@ describe("Given a Button component", () => {
     });
   });
 
-  describe("When it receives an action and a button with different type is clicked", () => {
+  describe("When it receives an action and a button with type delete is clicked", () => {
     test("Then it should call the action", () => {
       const action = jest.fn();
 
@@ -31,6 +31,25 @@ describe("Given a Button component", () => {
           actionOnClick={action}
           text="text"
           type="delete"
+          className="button"
+        />
+      );
+
+      userEvent.click(screen.getByRole("button"));
+
+      expect(action).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it receives an action and a button with type crear-viatge is clicked", () => {
+    test("Then it should call the action", () => {
+      const action = jest.fn();
+
+      render(
+        <Button
+          actionOnClick={action}
+          text="text"
+          type="crear-viatge"
           className="button"
         />
       );
