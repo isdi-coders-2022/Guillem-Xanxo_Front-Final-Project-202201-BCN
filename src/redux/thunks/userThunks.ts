@@ -6,8 +6,7 @@ import { Login } from "../../interfaces/Login";
 export const loginThunk =
   (userData: Login) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
-    const {
-      data: { token },
+    const { token },
     } = await fetch(`${process.env.REACT_APP_API_URL}usuari/login`, {
       method: "POST",
       headers: {
