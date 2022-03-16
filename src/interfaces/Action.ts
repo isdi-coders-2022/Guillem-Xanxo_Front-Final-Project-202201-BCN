@@ -1,4 +1,5 @@
 import { Trip } from "./Trip";
+import { Login } from "./Login";
 
 export interface Action {
   type: string;
@@ -17,5 +18,5 @@ export interface createTripAction extends Action {
 }
 
 export interface userLogininterfaceAction extends Action {
-  user: string[];
+  user: Login;
 }
