@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
 import Button from "../ButtonComponent/ButtonComponent";
 
 const LoginComponent = (): JSX.Element => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const goToHome = () => {
+    navigate("/viatges/crono");
+  };
 
   const blankFields = {
     nom: "",
