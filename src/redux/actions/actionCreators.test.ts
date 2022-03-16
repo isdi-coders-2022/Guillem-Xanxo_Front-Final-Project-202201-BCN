@@ -91,7 +91,7 @@ describe("Given a userLoginAction action", () => {
   describe("When it receives an array of two string", () => {
     test.only("Then it should return an action with type 'user-login' and the array as a property", () => {
       const loggedUser = {
-        nom: "Barcelona",
+        usuari: "Barcelona",
         contrassenya: "Sort",
       };
 
