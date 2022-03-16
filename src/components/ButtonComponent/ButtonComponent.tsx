@@ -6,6 +6,7 @@ interface ButtonProps {
   className: string;
   text: string;
   type: string;
+  disabled?: boolean;
   actionOnClick: () => void;
 }
 
@@ -14,6 +15,7 @@ const Button = ({
   actionOnClick,
   text,
   type,
+  disabled,
 }: ButtonProps): JSX.Element => {
   return (
     <>
@@ -41,6 +43,17 @@ const Button = ({
       )}
 
       {type === "crear-viatge" && (
+        <ButtonUsuari
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+        </ButtonUsuari>
+      )}
+
+      {type === "submit" && (
         <ButtonUsuari
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
