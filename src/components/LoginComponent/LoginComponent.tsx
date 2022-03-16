@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
+import { loginThunk } from "../../redux/thunks/userThunks";
 import Button from "../ButtonComponent/ButtonComponent";
 
 const LoginComponent = (): JSX.Element => {
@@ -41,7 +42,7 @@ const LoginComponent = (): JSX.Element => {
 
   const onFormSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
-    dispatch(createTripThunk(formData));
+    dispatch(loginThunk(formData));
     resetForm();
   };
 

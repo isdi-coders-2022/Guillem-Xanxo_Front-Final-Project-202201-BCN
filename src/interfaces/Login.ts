@@ -1,4 +1,4 @@
 export interface Login {
-  nom: string;
+  usuari: string;
   contrassenya: string;
 }
