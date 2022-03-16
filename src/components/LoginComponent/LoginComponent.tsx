@@ -13,19 +13,13 @@ const LoginComponent = (): JSX.Element => {
   };
 
   const blankFields = {
-    nom: "",
     usuari: "",
     contrassenya: "",
-    telefon: 0,
   };
 
   const [formData, setFormData] = useState<Usuari>(blankFields);
 
-  const isFilled =
-    formData.nom !== "" &&
-    formData.usuari !== "" &&
-    formData.contrassenya !== "" &&
-    formData.telefon !== 0;
+  const isFilled = formData.usuari !== "" && formData.contrassenya !== "";
 
   const changeData = (
     event:
