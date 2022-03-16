@@ -15,3 +15,7 @@ export interface deleteTripAction extends Action {
 export interface createTripAction extends Action {
   newTrip: Trip;
 }
+
+export interface userLogininterfaceAction extends Action {
+  user: string[];
+}

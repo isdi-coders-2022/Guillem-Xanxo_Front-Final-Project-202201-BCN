@@ -5,6 +5,7 @@ import {
   TripsAction,
   deleteTripAction,
   createTripAction,
+  userLogininterfaceAction,
 } from "../../interfaces/Action";
 
 export interface deleteThisTripActionProps extends Action {
@@ -24,4 +25,9 @@ export const deleteThisTripAction = (id: string): deleteTripAction => ({
 export const createThisTripAction = (newTrip: Trip): createTripAction => ({
   type: actionTypes.createTrip,
   newTrip,
+});
+
+export const userLoginAction = (user: string[]): userLogininterfaceAction => ({
+  type: actionTypes.userLogin,
+  user,
 });
