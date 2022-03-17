@@ -24,7 +24,7 @@ describe("Given an registerThunk function", () => {
         usuari: "gxanxo",
         contrassenya: "guillemito",
         nom: "Guillem",
-        telefon: 611111111,
+        telefon: "611111111",
       };
       const dispatch = jest.fn();
 

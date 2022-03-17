@@ -1,0 +1,110 @@
+import { SyntheticEvent, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Usuari } from "../../interfaces/Usuari";
+import { registerThunk } from "../../redux/thunks/userThunks";
+import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
+
+const RegisterFormComponent = (): JSX.Element => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const blankFields = {
+    usuari: "",
+    contrassenya: "",
+    nom: "",
+    telefon: "",
+  };
+
+  const [formData, setFormData] = useState<Usuari>(blankFields);
+
+  const isFilled =
+    formData.usuari !== "" &&
+    formData.contrassenya !== "" &&
+    formData.nom !== "" &&
+    formData.telefon !== "";
+
+  const changeData = (
+    event:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    setFormData({
+      ...formData,
+      [event.target.id]:
+        event.target.type === "checkbox"
+          ? (event as React.ChangeEvent<HTMLInputElement>).target.checked
+          : event.target.value,
+    });
+  };
+
+  const resetForm = () => {
+    setFormData(blankFields);
+  };
+
+  const onFormSubmit = (event: SyntheticEvent) => {
+    event.preventDefault();
+    dispatch(registerThunk(formData));
+    resetForm();
+    navigate("/usuari/login");
+  };
+
+  return (
+    <>
+      <form onSubmit={onFormSubmit} autoComplete="off">
+        <div className="form-group">
+          <label htmlFor="nom">
+            Nom: (públic quan es mostren els viatges){" "}
+          </label>
+          <input
+            type="text"
+            id="nom"
+            className="form-input"
+            value={formData.nom}
+            onChange={changeData}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="usuari">Usuari: </label>
+          <input
+            type="text"
+            id="usuari"
+            className="form-input"
+            value={formData.usuari}
+            onChange={changeData}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="contrassenya">Contrassenya: </label>
+          <input
+            type="password"
+            id="contrassenya"
+            className="form-input"
+            value={formData.contrassenya}
+            onChange={changeData}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="telefon">
+            Telèfon: (públic quan es mostren els viatges){" "}
+          </label>
+          <input
+            type="text"
+            id="telefon"
+            className="form-input"
+            value={formData.telefon}
+            onChange={changeData}
+          />
+        </div>
+        <ButtonNoAction
+          type="submit"
+          className="submit-button"
+          disabled={!isFilled}
+          text="Registra't"
+        ></ButtonNoAction>
+      </form>
+    </>
+  );
+};
+
+export default RegisterFormComponent;

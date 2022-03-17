@@ -21,12 +21,12 @@ describe("Given a userReducer", () => {
 
   describe("When it receives a user like User", () => {
     test("Then it should return the user", () => {
-      const user = { usuari: "", contrassenya: "", nom: "", telefon: 0 };
+      const user = { usuari: "", contrassenya: "", nom: "", telefon: "" };
       const expectedUser = {
         usuari: "conchi",
         contrassenya: "123123",
         nom: "Conchi",
-        telefon: 611111111,
+        telefon: "611111111",
       };
       const action = {
         type: "user-register",
