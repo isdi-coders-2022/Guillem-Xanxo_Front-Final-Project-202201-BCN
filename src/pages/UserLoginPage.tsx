@@ -4,6 +4,8 @@ import img from "../assets/map.webp";
 
 const Content = styled.div`
   background-image: url(${img});
+  width: 100%;
+  height: 100%;
 `;
 
 const UserLoginPage = () => {
