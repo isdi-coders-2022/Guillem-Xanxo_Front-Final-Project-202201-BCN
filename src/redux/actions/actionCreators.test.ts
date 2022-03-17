@@ -3,6 +3,7 @@ import {
   deleteThisTripAction,
   getAllTripsAction,
   userLoginAction,
+  userRegisterAction,
 } from "./actionCreators";
 import { Trip } from "../../interfaces/Trip";
 
@@ -88,8 +89,8 @@ describe("Given a createThisTripAction action", () => {
 });
 
 describe("Given a userLoginAction action", () => {
-  describe("When it receives an array of two string", () => {
-    test.only("Then it should return an action with type 'user-login' and the array as a property", () => {
+  describe("When it receives an object with properties usuari and contrassenya", () => {
+    test("Then it should return an action with type 'user-login' and the array as a property", () => {
       const loggedUser = {
         usuari: "Barcelona",
         contrassenya: "Sort",
@@ -101,6 +102,28 @@ describe("Given a userLoginAction action", () => {
       };
 
       const action = userLoginAction(loggedUser);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a userRegisterAction action", () => {
+  describe("When it receives an object like Usuari", () => {
+    test("Then it should return an action with type 'user-register' and the object as a property", () => {
+      const registerUser = {
+        usuari: "Barcelona",
+        nom: "Martí",
+        contrassenya: "Sort",
+        telefon: 611111111,
+      };
+
+      const expectedAction = {
+        type: "user-login",
+        user: registerUser,
+      };
+
+      const action = userRegisterAction(registerUser);
 
       expect(action).toEqual(expectedAction);
     });
