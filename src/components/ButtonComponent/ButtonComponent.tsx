@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ButtonProps {
   className: string;
-  text: string;
-  type: string;
+  text?: string;
+  nature: string;
   actionOnClick: () => void;
 }
 
@@ -13,11 +13,11 @@ const Button = ({
   className,
   actionOnClick,
   text,
-  type,
+  nature,
 }: ButtonProps): JSX.Element => {
   return (
     <>
-      {type === "usuari" && (
+      {nature === "usuari" && (
         <ButtonUsuari
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
@@ -29,7 +29,7 @@ const Button = ({
         </ButtonUsuari>
       )}
 
-      {type === "delete" && (
+      {nature === "delete" && (
         <ButtonUsuari
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
@@ -40,7 +40,7 @@ const Button = ({
         </ButtonUsuari>
       )}
 
-      {type === "crear-viatge" && (
+      {nature === "crear-viatge" && (
         <ButtonUsuari
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>

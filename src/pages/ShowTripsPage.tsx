@@ -25,7 +25,7 @@ const ShowTripsPage = (): JSX.Element => {
     <>
       <HeaderComponent />
       <Button
-        type="crear-viatge"
+        nature="crear-viatge"
         text="Crear viatge"
         className="crear-viatge-button"
         actionOnClick={goToCrear}

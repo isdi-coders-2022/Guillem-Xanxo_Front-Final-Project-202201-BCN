@@ -11,7 +11,7 @@ describe("Given a Button component", () => {
         <Button
           actionOnClick={action}
           text="text"
-          type="usuari"
+          nature="usuari"
           className="button"
         />
       );
@@ -30,7 +30,7 @@ describe("Given a Button component", () => {
         <Button
           actionOnClick={action}
           text="text"
-          type="delete"
+          nature="delete"
           className="button"
         />
       );
@@ -49,7 +49,7 @@ describe("Given a Button component", () => {
         <Button
           actionOnClick={action}
           text="text"
-          type="crear-viatge"
+          nature="crear-viatge"
           className="button"
         />
       );

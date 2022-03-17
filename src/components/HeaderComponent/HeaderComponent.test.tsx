@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
-    test("Then it should render an h1", () => {
+    test("Then it should render a heading", () => {
       render(
         <BrowserRouter>
           <HeaderComponent />

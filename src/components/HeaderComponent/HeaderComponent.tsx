@@ -6,7 +6,7 @@ const HeaderComponent = (): JSX.Element => {
   const navigate = useNavigate();
 
   const goToHome = () => {
-    navigate("/viatges/crono");
+    navigate("/usuari/login");
   };
 
   return (
@@ -15,8 +15,7 @@ const HeaderComponent = (): JSX.Element => {
         <h1 className="title">Transporta't Pallars</h1>
         <Button
           className="button-usuari"
-          type="usuari"
-          text=""
+          nature="usuari"
           actionOnClick={goToHome}
         />
       </HeaderComponentStyles>
