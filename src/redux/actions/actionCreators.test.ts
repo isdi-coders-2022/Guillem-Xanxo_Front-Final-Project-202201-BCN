@@ -115,7 +115,7 @@ describe("Given a userRegisterAction action", () => {
         usuari: "Barcelona",
         nom: "Martí",
         contrassenya: "Sort",
-        telefon: 611111111,
+        telefon: "611111111",
       };
 
       const expectedAction = {

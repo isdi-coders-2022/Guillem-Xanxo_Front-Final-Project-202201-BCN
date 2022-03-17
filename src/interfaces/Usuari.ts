@@ -2,5 +2,5 @@ export interface Usuari {
   nom?: string;
   usuari: string;
   contrassenya: string;
-  telefon?: number;
+  telefon?: string;
 }
