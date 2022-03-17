@@ -12,7 +12,6 @@ export const loginThunk =
       data: { token },
     } = await axios.post(url, userData);
 
-    console.log(token);
     localStorage.setItem("tokenKey", token);
     dispatch(userLoginAction(userData));
   };
