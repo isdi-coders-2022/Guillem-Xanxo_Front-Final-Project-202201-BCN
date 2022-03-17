@@ -55,4 +55,16 @@ export const handlers = [
       })
     );
   }),
+
+  rest.post(
+    `${process.env.REACT_APP_API_URL}usuari/register`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(201),
+        ctx.json({
+          message: "Usuari registrat correctament",
+        })
+      );
+    }
+  ),
 ];

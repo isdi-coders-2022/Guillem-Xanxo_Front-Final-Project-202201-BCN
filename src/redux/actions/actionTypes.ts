@@ -3,6 +3,7 @@ const actionTypes = {
   deleteThisTrip: "delete-this-trip",
   createTrip: "create-trip",
   userLogin: "user-login",
+  userRegister: "user-register",
 };
 
 export default actionTypes;
