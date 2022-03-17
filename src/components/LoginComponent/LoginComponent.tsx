@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
 import { loginThunk } from "../../redux/thunks/userThunks";
 import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
+import FormContainer from "./LoginComponent.styles";
 
 const LoginComponent = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -45,7 +46,12 @@ const LoginComponent = (): JSX.Element => {
 
   return (
     <>
-      <form onSubmit={onFormSubmit} autoComplete="off">
+      <FormContainer
+        className="container"
+        onSubmit={onFormSubmit}
+        autoComplete="off"
+      >
+        <h1>Transporta't Pallars</h1>
         <div className="form-group">
           <label htmlFor="usuari">Usuari: </label>
           <input
@@ -75,7 +81,7 @@ const LoginComponent = (): JSX.Element => {
         <a className="text_registre" href="/usuari/register">
           Registra't
         </a>
-      </form>
+      </FormContainer>
     </>
   );
 };

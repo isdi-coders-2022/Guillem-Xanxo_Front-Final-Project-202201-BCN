@@ -1,4 +1,4 @@
-import { ButtonSubmit } from "./ButtonNoActionComponent.styles";
+import { ButtonGeneric } from "./ButtonNoActionComponent.styles";
 
 interface ButtonNoActionProps {
   className?: string;
@@ -16,9 +16,9 @@ const ButtonNoAction = ({
   return (
     <>
       {type === "submit" && (
-        <ButtonSubmit className={className} disabled={disabled}>
+        <ButtonGeneric className={className} disabled={disabled}>
           {text}
-        </ButtonSubmit>
+        </ButtonGeneric>
       )}
     </>
   );
