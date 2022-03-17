@@ -1,10 +1,10 @@
 export interface Trip {
   origen: string;
   desti: string;
-  places: number;
+  places: string;
   data: string;
-  horaSortida: number;
+  horaSortida: string;
   comentaris: string;
-  dones: boolean;
+  dones: string;
   id: string;
 }

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Trip } from "../../interfaces/Trip";
 import { createTripThunk } from "../../redux/thunks/tripsThunks";
 import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
+import FormContainer from "./CreateFormComponent.styles";
 
 const CreateFormComponent = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -11,10 +12,10 @@ const CreateFormComponent = (): JSX.Element => {
     origen: "",
     desti: "",
     data: "",
-    places: 0,
-    horaSortida: 0,
+    places: "",
+    horaSortida: "",
     comentaris: "",
-    dones: false,
+    dones: "",
     id: "0",
   };
 
@@ -24,8 +25,9 @@ const CreateFormComponent = (): JSX.Element => {
     formData.origen !== "" &&
     formData.desti !== "" &&
     formData.data !== "" &&
-    formData.places !== 0 &&
-    formData.horaSortida !== 0;
+    formData.places !== "" &&
+    formData.dones !== "" &&
+    formData.horaSortida !== "";
 
   const changeData = (
     event:
@@ -48,15 +50,13 @@ const CreateFormComponent = (): JSX.Element => {
   const onFormSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     console.log(formData);
-    Date.parse(formData.data);
-    console.log(formData);
     dispatch(createTripThunk(formData));
     resetForm();
   };
 
   return (
     <>
-      <form onSubmit={onFormSubmit} autoComplete="off">
+      <FormContainer onSubmit={onFormSubmit} autoComplete="off">
         <div className="form-group">
           <label htmlFor="origen">Origen: </label>
           <input
@@ -117,14 +117,23 @@ const CreateFormComponent = (): JSX.Element => {
             onChange={changeData}
           />
         </div>
-
+        <div className="form-group">
+          <label htmlFor="dones">És exclusiu per dones?: </label>
+          <input
+            type="checkbox"
+            id="dones"
+            className="form-input"
+            value={formData.dones}
+            onChange={changeData}
+          />
+        </div>
         <ButtonNoAction
           type="submit"
           className="submit-button"
           disabled={!isFilled}
           text="Crea viatge"
         ></ButtonNoAction>
-      </form>
+      </FormContainer>
     </>
   );
 };
