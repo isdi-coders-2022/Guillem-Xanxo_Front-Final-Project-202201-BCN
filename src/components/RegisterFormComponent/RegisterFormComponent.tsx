@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
 import { registerThunk } from "../../redux/thunks/userThunks";
 import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
+import FormContainer from "./RegisterFormComponent.styles";
 
 const RegisterFormComponent = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -51,7 +52,12 @@ const RegisterFormComponent = (): JSX.Element => {
 
   return (
     <>
-      <form onSubmit={onFormSubmit} autoComplete="off">
+      <FormContainer
+        className="container"
+        onSubmit={onFormSubmit}
+        autoComplete="off"
+      >
+        <h1>Transporta't Pallars</h1>
         <div className="form-group">
           <label htmlFor="nom">
             Nom: (públic quan es mostren els viatges){" "}
@@ -102,7 +108,7 @@ const RegisterFormComponent = (): JSX.Element => {
           disabled={!isFilled}
           text="Registra't"
         ></ButtonNoAction>
-      </form>
+      </FormContainer>
     </>
   );
 };
