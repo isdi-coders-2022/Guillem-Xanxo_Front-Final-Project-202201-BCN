@@ -50,7 +50,7 @@ export const TripCardComponent = ({
             </>
           )}
           <Button
-            type="delete"
+            nature="delete"
             className="delete-button"
             text="Borrar"
             actionOnClick={() => deleteTrip(id)}

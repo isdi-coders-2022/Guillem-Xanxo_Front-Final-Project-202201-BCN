@@ -3,15 +3,11 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
 import { loginThunk } from "../../redux/thunks/userThunks";
-import Button from "../ButtonComponent/ButtonComponent";
+import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
 
 const LoginComponent = (): JSX.Element => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const goToHome = () => {
-    navigate("/viatges/crono");
-  };
 
   const blankFields = {
     usuari: "",
@@ -44,6 +40,7 @@ const LoginComponent = (): JSX.Element => {
     event.preventDefault();
     dispatch(loginThunk(formData));
     resetForm();
+    navigate("/viatges/crono");
   };
 
   return (
@@ -62,20 +59,19 @@ const LoginComponent = (): JSX.Element => {
         <div className="form-group">
           <label htmlFor="contrassenya">Contrassenya: </label>
           <input
-            type="text"
+            type="password"
             id="contrassenya"
             className="form-input"
             value={formData.contrassenya}
             onChange={changeData}
           />
         </div>
-        <Button
-          className="button-login"
+        <ButtonNoAction
           type="submit"
-          text="Entra"
+          className="submit-button"
           disabled={!isFilled}
-          actionOnClick={goToHome}
-        />
+          text="Entra"
+        ></ButtonNoAction>
       </form>
     </>
   );

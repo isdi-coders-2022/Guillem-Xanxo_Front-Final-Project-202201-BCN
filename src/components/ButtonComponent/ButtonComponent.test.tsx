@@ -11,7 +11,7 @@ describe("Given a Button component", () => {
         <Button
           actionOnClick={action}
           text="text"
-          type="usuari"
+          nature="usuari"
           className="button"
         />
       );
@@ -30,7 +30,7 @@ describe("Given a Button component", () => {
         <Button
           actionOnClick={action}
           text="text"
-          type="delete"
+          nature="delete"
           className="button"
         />
       );
@@ -49,26 +49,7 @@ describe("Given a Button component", () => {
         <Button
           actionOnClick={action}
           text="text"
-          type="crear-viatge"
-          className="button"
-        />
-      );
-
-      userEvent.click(screen.getByRole("button"));
-
-      expect(action).toHaveBeenCalled();
-    });
-  });
-
-  describe("When it receives an action and a button with type submit is clicked", () => {
-    test("Then it should call the action", () => {
-      const action = jest.fn();
-
-      render(
-        <Button
-          actionOnClick={action}
-          text="text"
-          type="submit"
+          nature="crear-viatge"
           className="button"
         />
       );
