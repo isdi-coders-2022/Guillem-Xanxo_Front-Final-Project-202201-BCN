@@ -27,7 +27,7 @@ describe("Given a Login component", () => {
 
       const text = screen.getAllByRole("textbox");
 
-      expect(text).toHaveLength(2);
+      expect(text).toHaveLength(1);
     });
   });
 
