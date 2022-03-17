@@ -72,6 +72,9 @@ const LoginComponent = (): JSX.Element => {
           disabled={!isFilled}
           text="Entra"
         ></ButtonNoAction>
+        <a className="text_registre" href="/usuari/register">
+          Registra't
+        </a>
       </form>
     </>
   );
