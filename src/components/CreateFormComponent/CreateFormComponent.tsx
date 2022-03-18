@@ -26,6 +26,8 @@ const CreateFormComponent = (): JSX.Element => {
     formData.desti !== "" &&
     formData.data !== "" &&
     formData.places !== "" &&
+    parseInt(formData.places) < 9 &&
+    parseInt(formData.places) > 0 &&
     formData.horaSortida !== "";
 
   const changeData = (
@@ -63,6 +65,7 @@ const CreateFormComponent = (): JSX.Element => {
             className="form-input"
             value={formData.origen}
             onChange={changeData}
+            maxLength={20}
           />
         </div>
         <div className="form-group">
@@ -73,6 +76,7 @@ const CreateFormComponent = (): JSX.Element => {
             className="form-input"
             value={formData.desti}
             onChange={changeData}
+            maxLength={20}
           />
         </div>
         <div className="form-group">
