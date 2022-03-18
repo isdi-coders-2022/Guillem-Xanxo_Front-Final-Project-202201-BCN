@@ -1,5 +1,6 @@
 import { useState, SyntheticEvent } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Trip } from "../../interfaces/Trip";
 import { createTripThunk } from "../../redux/thunks/tripsThunks";
 import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
@@ -7,6 +8,7 @@ import FormContainer from "./CreateFormComponent.styles";
 
 const CreateFormComponent = (): JSX.Element => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const blankFields = {
     origen: "",
@@ -52,6 +54,7 @@ const CreateFormComponent = (): JSX.Element => {
     event.preventDefault();
     dispatch(createTripThunk(formData));
     resetForm();
+    navigate("/usuari/home");
   };
 
   return (
