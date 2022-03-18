@@ -1,13 +1,14 @@
 import { Trip } from "./Trip";
 import { Login } from "./Login";
 import { Usuari } from "./Usuari";
+import { TripReceived } from "./TripReceived";
 
 export interface Action {
   type: string;
 }
 
 export interface TripsAction extends Action {
-  trips: Trip[];
+  trips: TripReceived[];
 }
 
 export interface deleteTripAction extends Action {

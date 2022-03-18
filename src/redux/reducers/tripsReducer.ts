@@ -8,15 +8,11 @@ import {
 
 const tripsReducer = (
   currentTrips: Trip[] = [],
-  action: TripsAction | deleteTripAction | createTripAction
+  action: deleteTripAction | createTripAction
 ) => {
   let newTripArray: Trip[];
 
   switch (action.type) {
-    case actionTypes.getAllTrips:
-      newTripArray = [...(action as TripsAction).trips];
-      break;
-
     case actionTypes.deleteThisTrip:
       newTripArray = currentTrips.filter(
         (trip: Trip) => trip.id !== (action as deleteTripAction).id
