@@ -26,7 +26,6 @@ const CreateFormComponent = (): JSX.Element => {
     formData.desti !== "" &&
     formData.data !== "" &&
     formData.places !== "" &&
-    formData.dones !== "" &&
     formData.horaSortida !== "";
 
   const changeData = (
