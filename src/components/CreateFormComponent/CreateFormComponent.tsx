@@ -48,7 +48,6 @@ const CreateFormComponent = (): JSX.Element => {
 
   const onFormSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
-    console.log(formData);
     dispatch(createTripThunk(formData));
     resetForm();
   };
@@ -122,7 +121,7 @@ const CreateFormComponent = (): JSX.Element => {
             type="checkbox"
             id="dones"
             className="form-input"
-            value={formData.dones ? "trues" : ""}
+            value={formData.dones ? "true" : ""}
             onChange={changeData}
           />
         </div>

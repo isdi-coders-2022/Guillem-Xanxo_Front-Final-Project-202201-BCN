@@ -6,4 +6,5 @@ export const TripCardComponentStyles = styled.header`
   margin-top: 20px;
   border: solid 1px black;
   font-size: 16px;
+  border-radius: 15px;
 `;

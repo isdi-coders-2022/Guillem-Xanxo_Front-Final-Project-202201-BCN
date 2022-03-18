@@ -5,7 +5,7 @@ export const ButtonGeneric = styled.button`
   font-family: monospace;
   border-radius: 10px;
   text-align: center;
-  width: 145px;
+  width: 35px;
   height: 35px;
   font-size: 20px;
   cursor: pointer;
@@ -17,4 +17,13 @@ export const ButtonUsuari = styled(ButtonGeneric)`
   background-color: white;
   margin: 21px;
   margin-left: 40px;
+`;
+
+export const ButtonCreaViatge = styled(ButtonGeneric)`
+  border: solid 2px black;
+  width: 220px;
+  height: 50px;
+  background-color: white;
+  margin: 15px;
+  margin-bottom: 40px;
 `;

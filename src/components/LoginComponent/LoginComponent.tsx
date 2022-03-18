@@ -41,7 +41,7 @@ const LoginComponent = (): JSX.Element => {
     event.preventDefault();
     dispatch(loginThunk(formData));
     resetForm();
-    navigate("/viatges/crono");
+    navigate("/usuari/home");
   };
 
   return (

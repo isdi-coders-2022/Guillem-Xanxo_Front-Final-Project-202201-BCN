@@ -1,5 +1,14 @@
-import { ButtonUsuari } from "./ButtonComponent.styles";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  ButtonUsuari,
+  ButtonGeneric,
+  ButtonCreaViatge,
+} from "./ButtonComponent.styles";
+import { faUser, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHouseUser,
+  faMapLocationDot,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ButtonProps {
@@ -29,7 +38,7 @@ const Button = ({
         </ButtonUsuari>
       )}
 
-      {nature === "delete" && (
+      {nature === "home" && (
         <ButtonUsuari
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
@@ -37,18 +46,44 @@ const Button = ({
           }
         >
           {text}
+          <FontAwesomeIcon icon={faHouseUser} />
         </ButtonUsuari>
       )}
 
-      {nature === "crear-viatge" && (
-        <ButtonUsuari
+      {nature === "delete" && (
+        <ButtonGeneric
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
           }
         >
           {text}
-        </ButtonUsuari>
+          <FontAwesomeIcon icon={faCircleXmark} />
+        </ButtonGeneric>
+      )}
+
+      {nature === "crear-viatge" && (
+        <ButtonCreaViatge
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+          <FontAwesomeIcon icon={faMapLocationDot} />
+        </ButtonCreaViatge>
+      )}
+
+      {nature === "cerca-viatge" && (
+        <ButtonCreaViatge
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </ButtonCreaViatge>
       )}
     </>
   );

@@ -5,19 +5,31 @@ import { HeaderComponentStyles } from "./HeaderComponent.styles";
 const HeaderComponent = (): JSX.Element => {
   const navigate = useNavigate();
 
-  const goToHome = () => {
+  const goToLogin = () => {
     navigate("/usuari/login");
+  };
+
+  const goToHome = () => {
+    navigate("/usuari/home");
   };
 
   return (
     <>
       <HeaderComponentStyles>
         <h1 className="title">Transporta't Pallars</h1>
-        <Button
-          className="button-usuari"
-          nature="usuari"
-          actionOnClick={goToHome}
-        />
+        {localStorage.getItem("tokenKey") ? (
+          <Button
+            className="button-usuari"
+            nature="home"
+            actionOnClick={goToHome}
+          />
+        ) : (
+          <Button
+            className="button-usuari"
+            nature="usuari"
+            actionOnClick={goToLogin}
+          />
+        )}
       </HeaderComponentStyles>
     </>
   );
