@@ -42,7 +42,7 @@ describe("Given a TripCardComponent component", () => {
         places: "3",
         horaSortida: "18",
         comentaris: "S'accepten animals",
-        dones: false,
+        dones: true,
         data: "2018-02-12 19:23:45",
         id: "1",
         horaSortidaNumber: 1000,
