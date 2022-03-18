@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { store } from "../../redux/store";
 import CreateFormComponent from "./CreateFormComponent";
 
@@ -17,9 +18,11 @@ describe("Given a CreateForm component", () => {
   describe("When it is rendered", () => {
     test("Then it should display 3 text boxes", () => {
       render(
-        <Provider store={store}>
-          <CreateFormComponent />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <CreateFormComponent />
+          </Provider>
+        </BrowserRouter>
       );
 
       const text = screen.getAllByRole("textbox");
@@ -31,9 +34,11 @@ describe("Given a CreateForm component", () => {
   describe("When it is filled with the required fields", () => {
     test("Then it should display the submit button", () => {
       render(
-        <Provider store={store}>
-          <CreateFormComponent />
-        </Provider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <CreateFormComponent />
+          </Provider>
+        </BrowserRouter>
       );
       userEvent.type(screen.getByLabelText("Origen:"), "Barcelona");
       userEvent.type(screen.getByLabelText("Destí:"), "Sort");
