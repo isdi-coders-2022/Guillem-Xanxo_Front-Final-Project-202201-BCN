@@ -1,5 +1,5 @@
-import { ButtonUsuari } from "./ButtonComponent.styles";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { ButtonUsuari, ButtonGeneric } from "./ButtonComponent.styles";
+import { faUser, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { faHouseUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -43,14 +43,15 @@ const Button = ({
       )}
 
       {nature === "delete" && (
-        <ButtonUsuari
+        <ButtonGeneric
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
           }
         >
           {text}
-        </ButtonUsuari>
+          <FontAwesomeIcon icon={faCircleXmark} />
+        </ButtonGeneric>
       )}
 
       {nature === "crear-viatge" && (

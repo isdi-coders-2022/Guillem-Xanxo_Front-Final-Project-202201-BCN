@@ -5,7 +5,7 @@ export const ButtonGeneric = styled.button`
   font-family: monospace;
   border-radius: 10px;
   text-align: center;
-  width: 145px;
+  width: 35px;
   height: 35px;
   font-size: 20px;
   cursor: pointer;
