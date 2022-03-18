@@ -122,7 +122,7 @@ const CreateFormComponent = (): JSX.Element => {
             type="checkbox"
             id="dones"
             className="form-input"
-            value={formData.dones ? "trues" : ""}
+            value={formData.dones ? "true" : ""}
             onChange={changeData}
           />
         </div>
