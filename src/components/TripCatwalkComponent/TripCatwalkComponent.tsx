@@ -1,16 +1,17 @@
 import { TripCardComponent } from "../TripCardComponent/TripCardComponent";
-import { Trip } from "../../interfaces/Trip";
+import { TripReceived } from "../../interfaces/TripReceived";
 
 interface TripCatwalkComponentProps {
-  trips: Trip[];
+  trips: TripReceived[];
 }
 
 const TripCatwalkComponent = ({
   trips,
 }: TripCatwalkComponentProps): JSX.Element => {
+  trips.sort((a, b) => a.dataNumber - b.dataNumber);
   return (
     <>
-      {trips.map((trip: Trip) => (
+      {trips.map((trip: TripReceived) => (
         <TripCardComponent trip={trip} key={trip.id} />
       ))}
     </>

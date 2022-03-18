@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { Trip } from "../../interfaces/Trip";
+import { TripReceived } from "../../interfaces/TripReceived";
 import { deleteTripThunk } from "../../redux/thunks/tripsThunks";
 import Button from "../ButtonComponent/ButtonComponent";
 import { TripCardComponentStyles } from "./TripCardComponent.styles";
 
 interface TripCardComponentProps {
-  trip: Trip;
+  trip: TripReceived;
 }
 export const TripCardComponent = ({
   trip: { origen, desti, places, horaSortida, comentaris, dones, id },
