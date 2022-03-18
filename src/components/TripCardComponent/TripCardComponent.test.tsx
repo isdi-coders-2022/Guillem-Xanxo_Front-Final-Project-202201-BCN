@@ -10,12 +10,14 @@ describe("Given a TripCardComponent component", () => {
       const trip = {
         origen: "Barcelona",
         desti: "Sort",
-        places: 3,
-        horaSortida: 18,
+        places: "3",
+        horaSortida: "18",
         comentaris: "S'accepten animals",
         dones: false,
         data: "2018-02-12 19:23:45",
         id: "1",
+        horaSortidaNumber: 1000,
+        dataNumber: 20220917,
       };
 
       render(
@@ -37,12 +39,14 @@ describe("Given a TripCardComponent component", () => {
       const trip = {
         origen: "Barcelona",
         desti: "Sort",
-        places: 3,
-        horaSortida: 18,
+        places: "3",
+        horaSortida: "18",
         comentaris: "S'accepten animals",
         dones: true,
         data: "2018-02-12 19:23:45",
         id: "1",
+        horaSortidaNumber: 1000,
+        dataNumber: 20220917,
       };
 
       render(

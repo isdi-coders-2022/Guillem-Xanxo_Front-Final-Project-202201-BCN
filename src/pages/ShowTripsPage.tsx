@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const ShowTripsPage = (): JSX.Element => {
   const dispatch = useDispatch();
-  const tripList = useSelector((state: RootState) => state.trips);
+  const tripList = useSelector((state: RootState) => state.getTrips);
 
   useEffect(() => {
     dispatch(getAllTripsThunk);

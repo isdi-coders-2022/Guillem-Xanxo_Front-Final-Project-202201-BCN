@@ -37,6 +37,10 @@ const FormContainer = styled.form`
     &:hover {
       background: #7a2edd;
     }
+    &:disabled {
+      cursor: default;
+      background-color: grey;
+    }
   }
 
   .text_registre {

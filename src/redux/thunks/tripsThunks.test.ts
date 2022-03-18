@@ -39,10 +39,10 @@ describe("Given an createTripThunk function", () => {
       const newTrip = {
         origen: "Barcelona",
         desti: "Sort",
-        places: 3,
-        horaSortida: 18,
+        places: "3",
+        horaSortida: "18",
         comentaris: "S'accepten animals",
-        dones: false,
+        dones: "false",
         data: "2018-02-12 19:23:45",
         id: "2",
       };
