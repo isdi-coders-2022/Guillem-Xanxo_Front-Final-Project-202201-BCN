@@ -15,7 +15,7 @@ const CreateFormComponent = (): JSX.Element => {
     places: "",
     horaSortida: "",
     comentaris: "",
-    dones: "",
+    dones: "false",
     id: "0",
   };
 
@@ -122,7 +122,7 @@ const CreateFormComponent = (): JSX.Element => {
             type="checkbox"
             id="dones"
             className="form-input"
-            value={formData.dones as string}
+            value={formData.dones ? "trues" : ""}
             onChange={changeData}
           />
         </div>
