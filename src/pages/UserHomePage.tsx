@@ -18,6 +18,10 @@ const UserHomePage = (): JSX.Element => {
     navigate("/viatges/crear");
   };
 
+  const goToCerca = () => {
+    navigate("/viatges/crono");
+  };
+
   return (
     <>
       <HeaderComponent />
@@ -26,6 +30,12 @@ const UserHomePage = (): JSX.Element => {
         text="Crear viatge"
         className="crear-viatge-button"
         actionOnClick={goToCrear}
+      />
+      <Button
+        nature="cerca-viatge"
+        text="Cerca viatge"
+        className="crear-viatge-button"
+        actionOnClick={goToCerca}
       />
     </>
   );

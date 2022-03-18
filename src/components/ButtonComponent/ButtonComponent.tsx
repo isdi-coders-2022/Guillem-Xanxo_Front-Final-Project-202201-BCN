@@ -1,6 +1,14 @@
-import { ButtonUsuari, ButtonGeneric } from "./ButtonComponent.styles";
+import {
+  ButtonUsuari,
+  ButtonGeneric,
+  ButtonCreaViatge,
+} from "./ButtonComponent.styles";
 import { faUser, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
-import { faHouseUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHouseUser,
+  faMapLocationDot,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ButtonProps {
@@ -55,14 +63,27 @@ const Button = ({
       )}
 
       {nature === "crear-viatge" && (
-        <ButtonUsuari
+        <ButtonCreaViatge
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
           }
         >
           {text}
-        </ButtonUsuari>
+          <FontAwesomeIcon icon={faMapLocationDot} />
+        </ButtonCreaViatge>
+      )}
+
+      {nature === "cerca-viatge" && (
+        <ButtonCreaViatge
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </ButtonCreaViatge>
       )}
     </>
   );

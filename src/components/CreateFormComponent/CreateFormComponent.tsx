@@ -48,7 +48,6 @@ const CreateFormComponent = (): JSX.Element => {
 
   const onFormSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
-    console.log(formData);
     dispatch(createTripThunk(formData));
     resetForm();
   };
