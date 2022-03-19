@@ -52,13 +52,13 @@ export const createTripThunk =
   };
 
 export const getThisTripThunk =
-  (trip: TripReceived) =>
-  async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+  (id: String) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}viatges/${trip.id}`
+      `${process.env.REACT_APP_API_URL}viatges/${id}`
     );
 
     const TripResponse = await response.json();
-    const TripArray = TripResponse.viatges;
-    dispatch(getThisTripAction(TripArray));
+    const TripDetail = TripResponse.trip;
+    console.log(TripDetail);
+    dispatch(getThisTripAction(TripDetail));
   };

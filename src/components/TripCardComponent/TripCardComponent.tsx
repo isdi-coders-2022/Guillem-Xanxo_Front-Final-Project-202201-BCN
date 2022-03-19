@@ -20,7 +20,7 @@ export const TripCardComponent = ({
   };
 
   const goToDetall = () => {
-    navigate("/viatges/detall");
+    navigate(`/viatges/detall/${id}`);
   };
 
   return (

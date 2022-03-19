@@ -15,7 +15,10 @@ function App() {
         <Route path="/*" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crono" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crear" element={<CreateTripPage />}></Route>
-        <Route path="viatges/detall" element={<ShowTripDetailPage />}></Route>
+        <Route
+          path="viatges/detall/:id"
+          element={<ShowTripDetailPage />}
+        ></Route>
         <Route path="/viatges/desti" element={<></>}></Route>
         <Route path="/viatges/origen" element={<></>}></Route>
         <Route path="/usuari/login" element={<UserLoginPage />}></Route>
