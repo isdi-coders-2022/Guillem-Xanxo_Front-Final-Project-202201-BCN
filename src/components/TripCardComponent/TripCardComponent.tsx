@@ -23,6 +23,10 @@ export const TripCardComponent = ({
     navigate(`/viatges/detall/${id}`);
   };
 
+  const goToCrono = () => {
+    navigate(`/viatges/crono`);
+  };
+
   return (
     <>
       <TripCardComponentStyles>
@@ -60,12 +64,23 @@ export const TripCardComponent = ({
             text=""
             actionOnClick={() => deleteTrip(id)}
           />
-          <Button
-            nature="detall"
-            className="detall-button"
-            text=""
-            actionOnClick={goToDetall}
-          />
+
+          {location.pathname === `/viatges/detall/${id}` ? (
+            <Button
+              nature="enrere-crono"
+              className="enrere-crono-button"
+              text="Enrere"
+              actionOnClick={goToCrono}
+            />
+          ) : (
+            <Button
+              nature="detall"
+              className="detall-button"
+              text="Més info"
+              actionOnClick={goToDetall}
+            />
+          )}
+
           {dones === true && (
             <p className="categoria_negreta">
               Aquest viatge és exclusiu per a passetgeres

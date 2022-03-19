@@ -9,6 +9,7 @@ import {
   faMapLocationDot,
   faMagnifyingGlass,
   faEye,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -96,6 +97,18 @@ const Button = ({
         >
           {text}
           <FontAwesomeIcon icon={faEye} />
+        </ButtonCreaViatge>
+      )}
+
+      {nature === "enrere-crono" && (
+        <ButtonCreaViatge
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+          <FontAwesomeIcon icon={faChevronLeft} />
         </ButtonCreaViatge>
       )}
     </>
