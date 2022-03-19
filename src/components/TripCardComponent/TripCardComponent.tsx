@@ -48,7 +48,7 @@ export const TripCardComponent = ({
             </article>
           </article>
 
-          {location.pathname === id && (
+          {location.pathname === `/viatges/detall/${id}` && (
             <>
               <p className="categoria_negreta">Comentaris:</p>
               <p className="categoria"> {comentaris}</p>
