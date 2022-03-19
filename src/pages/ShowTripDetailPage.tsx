@@ -10,13 +10,13 @@ const ShowTripDetailPage = (): JSX.Element => {
   const tripDetail = useSelector((state: RootState) => state.getTrips);
 
   useEffect(() => {
-    dispatch(getThisTripThunk);
+    dispatch(getThisTripThunk(trip));
   }, [dispatch]);
 
   return (
     <>
       <HeaderComponent />
-      <TripCardComponent trip={tripDetail} />
+      <TripCardComponent trip={trip} />
     </>
   );
 };

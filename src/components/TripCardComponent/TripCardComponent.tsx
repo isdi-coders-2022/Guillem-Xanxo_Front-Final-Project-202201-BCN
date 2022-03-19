@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { TripReceived } from "../../interfaces/TripReceived";
 import { deleteTripThunk } from "../../redux/thunks/tripsThunks";
 import Button from "../ButtonComponent/ButtonComponent";
@@ -13,9 +13,14 @@ export const TripCardComponent = ({
 }: TripCardComponentProps): JSX.Element => {
   const location = useLocation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const deleteTrip = (id: string) => {
     dispatch(deleteTripThunk(id));
+  };
+
+  const goToDetall = () => {
+    navigate("/viatges/detall");
   };
 
   return (
@@ -54,6 +59,12 @@ export const TripCardComponent = ({
             className="delete-button"
             text=""
             actionOnClick={() => deleteTrip(id)}
+          />
+          <Button
+            nature="detall"
+            className="detall-button"
+            text=""
+            actionOnClick={goToDetall}
           />
           {dones === true && (
             <p className="categoria_negreta">

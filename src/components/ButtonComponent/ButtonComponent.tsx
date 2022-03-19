@@ -8,6 +8,7 @@ import {
   faHouseUser,
   faMapLocationDot,
   faMagnifyingGlass,
+  faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -83,6 +84,18 @@ const Button = ({
         >
           {text}
           <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </ButtonCreaViatge>
+      )}
+
+      {nature === "detall" && (
+        <ButtonCreaViatge
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+          <FontAwesomeIcon icon={faEye} />
         </ButtonCreaViatge>
       )}
     </>
