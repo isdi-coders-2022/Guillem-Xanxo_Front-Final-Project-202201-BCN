@@ -6,6 +6,7 @@ import CreateTripPage from "./pages/CreateTripPage";
 import UserLoginPage from "./pages/UserLoginPage";
 import UserRegisterPage from "./pages/UserRegisterPage";
 import UserHomePage from "./pages/UserHomePage";
+import ShowTripDetailPage from "./pages/ShowTripDetailPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/*" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crono" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crear" element={<CreateTripPage />}></Route>
-        <Route path="/viatges/detall" element={<></>}></Route>
+        <Route path="viatges/detall" element={<ShowTripDetailPage />}></Route>
         <Route path="/viatges/desti" element={<></>}></Route>
         <Route path="/viatges/origen" element={<></>}></Route>
         <Route path="/usuari/login" element={<UserLoginPage />}></Route>
