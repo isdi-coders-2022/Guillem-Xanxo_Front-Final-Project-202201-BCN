@@ -2,6 +2,7 @@ import {
   createThisTripAction,
   deleteThisTripAction,
   getAllTripsAction,
+  getThisTripAction,
   userLoginAction,
   userRegisterAction,
 } from "./actionCreators";
@@ -43,6 +44,34 @@ describe("Given a getAllTripsAction action", () => {
       };
 
       const action = getAllTripsAction(trips);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a getThisTripAction action", () => {
+  describe("When it receives an object like TripReceived", () => {
+    test("Then it should return an action object with type 'get-this-trip'", () => {
+      const trip: TripReceived = {
+        origen: "Barcelona",
+        desti: "Sort",
+        places: "3",
+        horaSortida: "18",
+        horaSortidaNumber: 18,
+        comentaris: "S'accepten animals",
+        dones: false,
+        data: "2018-02-12",
+        dataNumber: 20180212,
+        id: "1",
+      };
+
+      const expectedAction = {
+        type: "get-this-trip",
+        trip,
+      };
+
+      const action = getThisTripAction(trip);
 
       expect(action).toEqual(expectedAction);
     });

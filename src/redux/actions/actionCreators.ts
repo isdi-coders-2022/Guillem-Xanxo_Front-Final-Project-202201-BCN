@@ -7,6 +7,7 @@ import {
   createTripAction,
   userLogininterfaceAction,
   userRegisterinterfaceAction,
+  TripDetailAction,
 } from "../../interfaces/Action";
 import { Login } from "../../interfaces/Login";
 import { Usuari } from "../../interfaces/Usuari";
@@ -41,4 +42,9 @@ export const userRegisterAction = (
 ): userRegisterinterfaceAction => ({
   type: actionTypes.userLogin,
   user,
+});
+
+export const getThisTripAction = (trip: TripReceived): TripDetailAction => ({
+  type: actionTypes.getThisTrip,
+  trip,
 });

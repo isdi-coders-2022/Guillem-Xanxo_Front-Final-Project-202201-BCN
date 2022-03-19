@@ -17,7 +17,6 @@ const getTripsReducer = (
         (trip: TripReceived) => trip.id !== (action as deleteTripAction).id
       );
       break;
-
     default:
       newTripArray = [...currentTrips];
       break;

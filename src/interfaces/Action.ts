@@ -11,6 +11,10 @@ export interface TripsAction extends Action {
   trips: TripReceived[];
 }
 
+export interface TripDetailAction extends Action {
+  trip: TripReceived;
+}
+
 export interface deleteTripAction extends Action {
   id: string;
 }

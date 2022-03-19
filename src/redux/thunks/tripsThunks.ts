@@ -5,6 +5,7 @@ import {
   createThisTripAction,
   deleteThisTripAction,
   getAllTripsAction,
+  getThisTripAction,
 } from "../actions/actionCreators";
 
 export const getAllTripsThunk = async (
@@ -47,4 +48,16 @@ export const createTripThunk =
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));
     }
+  };
+
+export const getThisTripThunk =
+  (id: String) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}viatges/${id}`
+    );
+
+    const TripResponse = await response.json();
+    const TripDetail = TripResponse.trip;
+    console.log(TripDetail);
+    dispatch(getThisTripAction(TripDetail));
   };
