@@ -1,7 +1,6 @@
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { Trip } from "../../interfaces/Trip";
-import { TripReceived } from "../../interfaces/TripReceived";
 import {
   createThisTripAction,
   deleteThisTripAction,
