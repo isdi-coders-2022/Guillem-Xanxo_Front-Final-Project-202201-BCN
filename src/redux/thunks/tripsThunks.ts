@@ -58,6 +58,5 @@ export const getThisTripThunk =
 
     const TripResponse = await response.json();
     const TripDetail = TripResponse.trip;
-    console.log(TripDetail);
     dispatch(getThisTripAction(TripDetail));
   };
