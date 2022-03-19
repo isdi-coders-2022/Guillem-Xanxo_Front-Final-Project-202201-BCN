@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { idText } from "typescript";
+
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
 import { TripCardComponent } from "../components/TripCardComponent/TripCardComponent";
 import { RootState } from "../redux/store";
