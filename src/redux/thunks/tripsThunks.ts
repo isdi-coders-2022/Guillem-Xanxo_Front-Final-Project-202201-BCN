@@ -1,10 +1,12 @@
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { Trip } from "../../interfaces/Trip";
+import { TripReceived } from "../../interfaces/TripReceived";
 import {
   createThisTripAction,
   deleteThisTripAction,
   getAllTripsAction,
+  getThisTripAction,
 } from "../actions/actionCreators";
 
 export const getAllTripsThunk = async (
@@ -47,4 +49,16 @@ export const createTripThunk =
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));
     }
+  };
+
+export const getThisTripThunk =
+  (trip: TripReceived) =>
+  async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}viatges/${trip.id}`
+    );
+
+    const TripResponse = await response.json();
+    const TripArray = TripResponse.viatges;
+    dispatch(getThisTripAction(TripArray));
   };

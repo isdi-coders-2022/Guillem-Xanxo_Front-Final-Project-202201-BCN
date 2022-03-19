@@ -7,7 +7,7 @@ import { getThisTripThunk } from "../redux/thunks/tripsThunks";
 
 const ShowTripDetailPage = (): JSX.Element => {
   const dispatch = useDispatch();
-  const tripDetail = useSelector((state: RootState) => state.getTrips[0]);
+  const tripDetail = useSelector((state: RootState) => state.getTrips);
 
   useEffect(() => {
     dispatch(getThisTripThunk);
