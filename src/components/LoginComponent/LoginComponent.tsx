@@ -1,7 +1,8 @@
-import { SyntheticEvent, useState } from "react";
-import { useDispatch } from "react-redux";
+import { SyntheticEvent, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
+import { RootState } from "../../redux/store";
 import { loginThunk } from "../../redux/thunks/userThunks";
 import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
 import FormContainer from "./LoginComponent.styles";
@@ -9,6 +10,7 @@ import FormContainer from "./LoginComponent.styles";
 const LoginComponent = (): JSX.Element => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state: RootState) => state.user);
 
   const blankFields = {
     usuari: "",
@@ -18,6 +20,12 @@ const LoginComponent = (): JSX.Element => {
   const [formData, setFormData] = useState<Usuari>(blankFields);
 
   const isFilled = formData.usuari !== "" && formData.contrassenya !== "";
+
+  useEffect(() => {
+    if (user.usuari) {
+      navigate("/usuari/home");
+    }
+  });
 
   const changeData = (
     event:
@@ -41,7 +49,6 @@ const LoginComponent = (): JSX.Element => {
     event.preventDefault();
     dispatch(loginThunk(formData));
     resetForm();
-    navigate("/usuari/home");
   };
 
   return (

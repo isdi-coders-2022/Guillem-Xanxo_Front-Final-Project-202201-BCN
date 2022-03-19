@@ -13,8 +13,10 @@ export const loginThunk =
       data: { token },
     } = await axios.post(url, userData);
 
-    localStorage.setItem("tokenKey", token);
-    dispatch(userLoginAction(userData));
+    if (token !== undefined) {
+      localStorage.setItem("tokenKey", token);
+      dispatch(userLoginAction(userData));
+    }
   };
 
 export const registerThunk =
