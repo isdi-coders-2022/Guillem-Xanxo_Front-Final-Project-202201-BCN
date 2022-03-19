@@ -100,6 +100,8 @@ const RegisterFormComponent = (): JSX.Element => {
             className="form-input"
             value={formData.telefon}
             onChange={changeData}
+            maxLength={9}
+            minLength={8}
           />
         </div>
         <ButtonNoAction

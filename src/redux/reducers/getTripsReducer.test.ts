@@ -70,4 +70,57 @@ describe("Given a tripsReducer function", () => {
       expect(newTripArray).toEqual(currentTrips);
     });
   });
+
+  describe("When it is called with a deleteThisTripAction action", () => {
+    test("Then it should return an array of trips without the trip with id passed as argument", () => {
+      const currentTrips: TripReceived[] = [
+        {
+          origen: "Barcelona",
+          desti: "Sort",
+          places: "3",
+          horaSortida: "18",
+          horaSortidaNumber: 18,
+          comentaris: "S'accepten animals",
+          dones: false,
+          data: "2018-02-12",
+          dataNumber: 20180212,
+          id: "1",
+        },
+        {
+          origen: "Barcelona",
+          desti: "Sort",
+          places: "3",
+          horaSortida: "18",
+          horaSortidaNumber: 18,
+          comentaris: "S'accepten animals",
+          dones: false,
+          data: "2018-02-12",
+          dataNumber: 20180212,
+          id: "2",
+        },
+      ];
+      const action = {
+        type: "delete-this-trip",
+        id: "1",
+      };
+      const expectedTripArray: TripReceived[] = [
+        {
+          origen: "Barcelona",
+          desti: "Sort",
+          places: "3",
+          horaSortida: "18",
+          horaSortidaNumber: 18,
+          comentaris: "S'accepten animals",
+          dones: false,
+          data: "2018-02-12",
+          dataNumber: 20180212,
+          id: "2",
+        },
+      ];
+
+      const newState = getTripsReducer(currentTrips, action);
+
+      expect(newState).toEqual(expectedTripArray);
+    });
+  });
 });

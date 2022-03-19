@@ -25,7 +25,6 @@ const FormContainer = styled.form`
   }
   .submit-button {
     cursor: pointer;
-    width: 50%;
     border: none;
     background: black;
     font-size: 24px;

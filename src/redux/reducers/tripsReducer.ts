@@ -1,20 +1,11 @@
 import { Trip } from "../../interfaces/Trip";
 import actionTypes from "../actions/actionTypes";
-import { deleteTripAction, createTripAction } from "../../interfaces/Action";
+import { createTripAction } from "../../interfaces/Action";
 
-const tripsReducer = (
-  currentTrips: Trip[] = [],
-  action: deleteTripAction | createTripAction
-) => {
+const tripsReducer = (currentTrips: Trip[] = [], action: createTripAction) => {
   let newTripArray: Trip[];
 
   switch (action.type) {
-    case actionTypes.deleteThisTrip:
-      newTripArray = currentTrips.filter(
-        (trip: Trip) => trip.id !== (action as deleteTripAction).id
-      );
-      break;
-
     case actionTypes.createTrip:
       newTripArray = [...currentTrips, (action as createTripAction).newTrip];
       break;
