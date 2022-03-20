@@ -5,7 +5,10 @@ import actionTypes from "../actions/actionTypes";
 
 const userReducer = (
   currentUser: Usuari = { usuari: "", contrassenya: "" },
-  action: userLogininterfaceAction
+  action: userLogininterfaceAction = {
+    type: "",
+    user: { usuari: "", contrassenya: "" },
+  }
 ) => {
   let loggedInUser: Login;
 
