@@ -22,7 +22,7 @@ const tripsReducer = (
 
   switch (action.type) {
     case actionTypes.createTrip:
-      newTripArray = [...currentTrips, (action as createTripAction).newTrip];
+      newTripArray = [...currentTrips, action.newTrip];
       break;
 
     default:
