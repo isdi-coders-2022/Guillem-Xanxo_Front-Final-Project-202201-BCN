@@ -51,4 +51,26 @@ describe("Given a CreateForm component", () => {
       expect(button).toBeInTheDocument();
     });
   });
+
+  describe("When it is filled with the required fields and then the button to  submit appears", () => {
+    test("Then when the button is clicked it dispatches the action submit", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <CreateFormComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+      userEvent.type(screen.getByLabelText("Origen:"), "Barcelona");
+      userEvent.type(screen.getByLabelText("Destí:"), "Sort");
+      userEvent.type(screen.getByLabelText("Places:"), "4");
+      userEvent.type(screen.getByLabelText("Data:"), "2018-02-12");
+      userEvent.type(screen.getByLabelText("Hora de sortida:"), "18:00");
+      const button = screen.getByRole("button", { name: /Crea viatge/i });
+
+      userEvent.click(button);
+
+      expect(mockUseDispatch).toHaveBeenCalled();
+    });
+  });
 });
