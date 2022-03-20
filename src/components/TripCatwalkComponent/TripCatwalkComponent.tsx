@@ -8,8 +8,6 @@ interface TripCatwalkComponentProps {
 const TripCatwalkComponent = ({
   trips,
 }: TripCatwalkComponentProps): JSX.Element => {
-  const dates = trips.entries();
-
   return (
     <>
       {trips.map((trip: TripReceived) => (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TripCardComponentStyles = styled.header`
+export const TripCardComponentStyles = styled.div`
   padding: 20px;
   display: flex,
   flex-direction: row,
