@@ -23,9 +23,10 @@ export const getAllTripsThunk = async (
 
 export const deleteTripThunk =
   (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("tokenKey");
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}viatges/${id}`,
-      { method: "DELETE" }
+      { method: "DELETE", headers: { authorization: `Bearer ${userToken}` } }
     );
     if (response.ok) {
       dispatch(deleteThisTripAction(id));
@@ -35,12 +36,14 @@ export const deleteTripThunk =
 export const createTripThunk =
   (newTrip: Trip) =>
   async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+    const userToken = localStorage.getItem("tokenKey");
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}viatges/crear`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          authorization: `Bearer ${userToken}`,
         },
         body: JSON.stringify(newTrip),
       }
