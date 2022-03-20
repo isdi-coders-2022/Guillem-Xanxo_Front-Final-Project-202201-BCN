@@ -11,6 +11,7 @@ import {
   faMagnifyingGlass,
   faEye,
   faChevronLeft,
+  faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -111,6 +112,18 @@ const Button = ({
           {text}
           <FontAwesomeIcon icon={faChevronLeft} className="icon" />
         </ButtonDetall>
+      )}
+
+      {nature === "tanca-sessio" && (
+        <ButtonCreaViatge
+          className={className}
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+            actionOnClick()
+          }
+        >
+          {text}
+          <FontAwesomeIcon icon={faArrowRightFromBracket} className="icon" />
+        </ButtonCreaViatge>
       )}
     </>
   );
