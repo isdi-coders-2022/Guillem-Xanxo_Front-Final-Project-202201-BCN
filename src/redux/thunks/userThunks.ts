@@ -15,6 +15,7 @@ export const loginThunk =
 
     if (token !== undefined) {
       localStorage.setItem("tokenKey", token);
+
       dispatch(userLoginAction(userData));
     }
   };
