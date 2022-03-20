@@ -2,6 +2,7 @@ import {
   ButtonUsuari,
   ButtonGeneric,
   ButtonCreaViatge,
+  ButtonDetall,
 } from "./ButtonComponent.styles";
 import { faUser, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -89,7 +90,7 @@ const Button = ({
       )}
 
       {nature === "detall" && (
-        <ButtonCreaViatge
+        <ButtonDetall
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
@@ -97,11 +98,11 @@ const Button = ({
         >
           {text}
           <FontAwesomeIcon icon={faEye} className="icon" />
-        </ButtonCreaViatge>
+        </ButtonDetall>
       )}
 
       {nature === "enrere-crono" && (
-        <ButtonCreaViatge
+        <ButtonDetall
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
@@ -109,7 +110,7 @@ const Button = ({
         >
           {text}
           <FontAwesomeIcon icon={faChevronLeft} className="icon" />
-        </ButtonCreaViatge>
+        </ButtonDetall>
       )}
     </>
   );
