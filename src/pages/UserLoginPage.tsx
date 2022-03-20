@@ -1,3 +1,4 @@
+import Toastr from "../components/Toastr/Toastr";
 import LoginComponent from "../components/LoginComponent/LoginComponent";
 import styled from "styled-components";
 import img from "../assets/map.webp";

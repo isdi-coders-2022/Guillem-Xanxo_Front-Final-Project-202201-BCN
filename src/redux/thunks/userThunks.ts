@@ -4,6 +4,7 @@ import { Login } from "../../interfaces/Login";
 import { userLoginAction, userRegisterAction } from "../actions/actionCreators";
 import axios from "axios";
 import { Usuari } from "../../interfaces/Usuari";
+import { toast } from "react-toastify";
 
 export const loginThunk =
   (userData: Login) =>
@@ -15,8 +16,10 @@ export const loginThunk =
 
     if (token !== undefined) {
       localStorage.setItem("tokenKey", token);
-
       dispatch(userLoginAction(userData));
+      toast.success("You're logged in!");
+    } else {
+      toast.error("Wrong credentials");
     }
   };
 
