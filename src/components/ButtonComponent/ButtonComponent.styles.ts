@@ -21,9 +21,18 @@ export const ButtonUsuari = styled(ButtonGeneric)`
 
 export const ButtonCreaViatge = styled(ButtonGeneric)`
   border: solid 2px black;
-  width: 220px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   background-color: white;
-  margin: 15px;
+  margin: 20px;
   margin-bottom: 40px;
+`;
+
+export const ButtonDetall = styled(ButtonGeneric)`
+  border: solid 2px black;
+  width: 170px;
+  height: 40px;
+  background-color: white;
+  margin: 10px;
+  margin-bottom: 20px;
 `;

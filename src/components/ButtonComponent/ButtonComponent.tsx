@@ -2,6 +2,7 @@ import {
   ButtonUsuari,
   ButtonGeneric,
   ButtonCreaViatge,
+  ButtonDetall,
 } from "./ButtonComponent.styles";
 import { faUser, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -72,7 +73,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faMapLocationDot} />
+          <FontAwesomeIcon icon={faMapLocationDot} className="icon" />
         </ButtonCreaViatge>
       )}
 
@@ -84,32 +85,32 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
         </ButtonCreaViatge>
       )}
 
       {nature === "detall" && (
-        <ButtonCreaViatge
+        <ButtonDetall
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
           }
         >
           {text}
-          <FontAwesomeIcon icon={faEye} />
-        </ButtonCreaViatge>
+          <FontAwesomeIcon icon={faEye} className="icon" />
+        </ButtonDetall>
       )}
 
       {nature === "enrere-crono" && (
-        <ButtonCreaViatge
+        <ButtonDetall
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
           }
         >
           {text}
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </ButtonCreaViatge>
+          <FontAwesomeIcon icon={faChevronLeft} className="icon" />
+        </ButtonDetall>
       )}
     </>
   );

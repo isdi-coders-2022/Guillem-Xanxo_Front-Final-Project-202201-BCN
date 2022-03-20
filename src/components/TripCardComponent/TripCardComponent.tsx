@@ -58,12 +58,15 @@ export const TripCardComponent = ({
               <p className="categoria"> {comentaris}</p>
             </>
           )}
-          <Button
-            nature="delete"
-            className="delete-button"
-            text=""
-            actionOnClick={() => deleteTrip(id)}
-          />
+
+          {localStorage.getItem("tokenKey") && (
+            <Button
+              nature="delete"
+              className="delete-button"
+              text=""
+              actionOnClick={() => deleteTrip(id)}
+            />
+          )}
 
           {location.pathname === `/viatges/detall/${id}` ? (
             <Button
