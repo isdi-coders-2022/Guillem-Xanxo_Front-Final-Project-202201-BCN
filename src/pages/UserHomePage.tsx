@@ -22,6 +22,11 @@ const UserHomePage = (): JSX.Element => {
     navigate("/viatges/crono");
   };
 
+  const tancaSessio = () => {
+    localStorage.removeItem("tokenKey");
+    navigate("/viatges/crono");
+  };
+
   return (
     <>
       <HeaderComponent />
@@ -36,6 +41,12 @@ const UserHomePage = (): JSX.Element => {
         text="Cerca viatge"
         className="crear-viatge-button"
         actionOnClick={goToCerca}
+      />
+      <Button
+        nature="tanca-sessio"
+        text="Tanca sessió"
+        className="crear-viatge-button"
+        actionOnClick={tancaSessio}
       />
     </>
   );
