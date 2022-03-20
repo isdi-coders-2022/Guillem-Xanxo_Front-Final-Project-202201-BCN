@@ -8,7 +8,8 @@ interface TripCatwalkComponentProps {
 const TripCatwalkComponent = ({
   trips,
 }: TripCatwalkComponentProps): JSX.Element => {
-  trips.sort((a, b) => a.dataNumber - b.dataNumber);
+  const dates = trips.entries();
+
   return (
     <>
       {trips.map((trip: TripReceived) => (

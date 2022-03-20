@@ -72,7 +72,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faMapLocationDot} />
+          <FontAwesomeIcon icon={faMapLocationDot} className="icon" />
         </ButtonCreaViatge>
       )}
 
@@ -84,7 +84,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
         </ButtonCreaViatge>
       )}
 
@@ -96,7 +96,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faEye} />
+          <FontAwesomeIcon icon={faEye} className="icon" />
         </ButtonCreaViatge>
       )}
 
@@ -108,7 +108,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faChevronLeft} />
+          <FontAwesomeIcon icon={faChevronLeft} className="icon" />
         </ButtonCreaViatge>
       )}
     </>
