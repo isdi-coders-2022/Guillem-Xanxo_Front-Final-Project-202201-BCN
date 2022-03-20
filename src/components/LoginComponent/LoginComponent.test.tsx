@@ -48,4 +48,23 @@ describe("Given a Login component", () => {
       expect(button).toBeInTheDocument();
     });
   });
+
+  describe("When it is filled with the required fields and the button Entra appears", () => {
+    test("Then it should dispatch the submit button when clicked", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <LoginComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+      userEvent.type(screen.getByLabelText("Usuari:"), "Luis");
+      userEvent.type(screen.getByLabelText("Contrassenya:"), "122112");
+
+      const button = screen.getByRole("button", { name: /Entra/i });
+      userEvent.click(button);
+
+      expect(mockUseDispatch).toHaveBeenCalled();
+    });
+  });
 });

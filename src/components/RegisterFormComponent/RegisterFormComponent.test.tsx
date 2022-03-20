@@ -56,4 +56,31 @@ describe("Given a Register component", () => {
       expect(button).toBeInTheDocument();
     });
   });
+
+  describe("When it is filled with the required fields and the button appears", () => {
+    test("Then it should dispatch the submit button", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <RegisterFormComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+      userEvent.type(screen.getByLabelText("Usuari:"), "Luis");
+      userEvent.type(screen.getByLabelText("Contrassenya:"), "122112");
+      userEvent.type(
+        screen.getByLabelText("Telèfon: (públic quan es mostren els viatges)"),
+        "611111111"
+      );
+      userEvent.type(
+        screen.getByLabelText("Nom: (públic quan es mostren els viatges)"),
+        "Luis"
+      );
+
+      const button = screen.getByRole("button", { name: /Registra't/i });
+      userEvent.click(button);
+
+      expect(mockUseDispatch).toHaveBeenCalled();
+    });
+  });
 });

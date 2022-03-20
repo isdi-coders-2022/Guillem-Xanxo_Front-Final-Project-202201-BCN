@@ -2,6 +2,7 @@ import {
   createTripThunk,
   deleteTripThunk,
   getAllTripsThunk,
+  getThisTripThunk,
 } from "./tripsThunks";
 
 describe("Given a getAllTripsThunk function", () => {
@@ -37,8 +38,8 @@ describe("Given a getThisTripThunk function", () => {
         trip: trip,
       };
 
-      const deletedTrip = deleteTripThunk(action.trip.id);
-      await deletedTrip(dispatch);
+      const thisTrip = getThisTripThunk(action.trip.id);
+      await thisTrip(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
     });
