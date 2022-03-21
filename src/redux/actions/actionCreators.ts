@@ -8,6 +8,7 @@ import {
   userLogininterfaceAction,
   userRegisterinterfaceAction,
   TripDetailAction,
+  UserTripsAction,
 } from "../../interfaces/Action";
 import { Login } from "../../interfaces/Login";
 import { Usuari } from "../../interfaces/Usuari";
@@ -19,6 +20,11 @@ export interface deleteThisTripActionProps extends Action {
 
 export const getAllTripsAction = (trips: TripReceived[]): TripsAction => ({
   type: actionTypes.getAllTrips,
+  trips,
+});
+
+export const getUserTripsAction = (trips: TripReceived[]): UserTripsAction => ({
+  type: actionTypes.getUserTrips,
   trips,
 });
 

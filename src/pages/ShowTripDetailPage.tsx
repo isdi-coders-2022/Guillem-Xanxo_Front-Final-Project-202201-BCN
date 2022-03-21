@@ -19,7 +19,7 @@ const ShowTripDetailPage = (): JSX.Element => {
   return (
     <>
       <HeaderComponent />
-      <TripCardComponent trip={tripDetail} />
+      <TripCardComponent trip={tripDetail} visibility="public" />
     </>
   );
 };

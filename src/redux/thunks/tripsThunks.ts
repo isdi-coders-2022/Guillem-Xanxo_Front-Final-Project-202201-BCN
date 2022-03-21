@@ -7,6 +7,7 @@ import {
   deleteThisTripAction,
   getAllTripsAction,
   getThisTripAction,
+  getUserTripsAction,
 } from "../actions/actionCreators";
 
 export const getAllTripsThunk = async (
@@ -20,6 +21,19 @@ export const getAllTripsThunk = async (
   const TripListResponse = await response.json();
   const TripsArray = TripListResponse.viatges;
   dispatch(getAllTripsAction(TripsArray));
+};
+
+export const getUserTripsThunk = async (
+  dispatch: ThunkDispatch<void, unknown, AnyAction>
+) => {
+  const userToken = localStorage.getItem("tokenKey");
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}viatges/publicats`,
+    { method: "GET", headers: { authorization: `Bearer ${userToken}` } }
+  );
+
+  const TripListResponse = await response.json();
+  dispatch(getUserTripsAction(TripListResponse));
 };
 
 export const deleteTripThunk =
@@ -50,7 +64,6 @@ export const createTripThunk =
         body: JSON.stringify(newTrip),
       }
     );
-    console.log(newTrip);
 
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));

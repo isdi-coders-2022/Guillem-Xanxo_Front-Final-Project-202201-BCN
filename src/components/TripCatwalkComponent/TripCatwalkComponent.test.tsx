@@ -27,7 +27,7 @@ describe("Given a TripCatwalkComponent component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <TripCatwalkComponent trips={tripsArray} />
+            <TripCatwalkComponent trips={tripsArray} visibility="" />
           </Provider>
         </BrowserRouter>
       );
