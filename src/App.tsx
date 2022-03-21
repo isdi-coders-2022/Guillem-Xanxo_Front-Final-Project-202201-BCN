@@ -7,10 +7,12 @@ import UserLoginPage from "./pages/UserLoginPage";
 import UserRegisterPage from "./pages/UserRegisterPage";
 import UserHomePage from "./pages/UserHomePage";
 import ShowTripDetailPage from "./pages/ShowTripDetailPage";
+import Toastr from "./components/Toastr/Toastr";
 
 function App() {
   return (
     <>
+      <Toastr />
       <Routes>
         <Route path="/*" element={<ShowTripsPage />}></Route>
         <Route path="/viatges/crono" element={<ShowTripsPage />}></Route>

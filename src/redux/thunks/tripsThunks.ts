@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { Trip } from "../../interfaces/Trip";
@@ -30,6 +31,7 @@ export const deleteTripThunk =
     );
     if (response.ok) {
       dispatch(deleteThisTripAction(id));
+      toast.success("Viatge borrat correctament");
     }
   };
 
@@ -50,6 +52,7 @@ export const createTripThunk =
     );
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));
+      toast.success("Viatge creat correctament");
     }
   };
 

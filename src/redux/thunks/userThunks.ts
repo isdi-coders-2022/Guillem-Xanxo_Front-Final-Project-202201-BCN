@@ -14,12 +14,12 @@ export const loginThunk =
       data: { token },
     } = await axios.post(url, userData);
 
-    if (token !== undefined) {
+    if (token) {
       localStorage.setItem("tokenKey", token);
       dispatch(userLoginAction(userData));
-      toast.success("You're logged in!");
+      toast.success("Usuari correcte");
     } else {
-      toast.error("Wrong credentials");
+      toast.error("Hi ha hagut algun error");
     }
   };
 
