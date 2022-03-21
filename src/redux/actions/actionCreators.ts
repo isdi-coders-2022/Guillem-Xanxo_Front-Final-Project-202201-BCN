@@ -8,6 +8,7 @@ import {
   userLogininterfaceAction,
   userRegisterinterfaceAction,
   TripDetailAction,
+  UserTripsAction,
 } from "../../interfaces/Action";
 import { Login } from "../../interfaces/Login";
 import { Usuari } from "../../interfaces/Usuari";
@@ -22,7 +23,7 @@ export const getAllTripsAction = (trips: TripReceived[]): TripsAction => ({
   trips,
 });
 
-export const getUserTripsAction = (trips: TripReceived[]): TripsAction => ({
+export const getUserTripsAction = (trips: TripReceived[]): UserTripsAction => ({
   type: actionTypes.getUserTrips,
   trips,
 });

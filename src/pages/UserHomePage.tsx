@@ -8,7 +8,7 @@ import { cleanUserAction } from "../redux/actions/actionCreators";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import TripCatwalkComponent from "../components/TripCatwalkComponent/TripCatwalkComponent";
-import { getAllTripsThunk } from "../redux/thunks/tripsThunks";
+import { getUserTripsThunk } from "../redux/thunks/tripsThunks";
 
 const UserHomePage = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const UserHomePage = (): JSX.Element => {
   const tripList = useSelector((state: RootState) => state.getTrips);
 
   useEffect(() => {
-    dispatch(getAllTripsThunk);
+    dispatch(getUserTripsThunk);
   }, [dispatch]);
 
   const goToCrear = () => {
