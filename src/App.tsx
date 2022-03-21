@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 
 function App() {
-  /* const user = useSelector((state: RootState) => state.user);
+  const user = useSelector((state: RootState) => state.user);
   let home = false;
 
   useEffect(() => {
@@ -20,8 +20,7 @@ function App() {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       home = true;
     }
-  }, [user]); */
-  const token = localStorage.getItem("tokenKey");
+  }, [user]);
 
   return (
     <>
@@ -41,7 +40,7 @@ function App() {
 
         <Route
           path="/usuari/home"
-          element={token ? <UserHomePage /> : <UserLoginPage />}
+          element={home ? <UserHomePage /> : <UserLoginPage />}
         ></Route>
         <Route path="/usuari/viatges" element={<></>}></Route>
         <Route path="/usuari/viatges/detall" element={<></>}></Route>
