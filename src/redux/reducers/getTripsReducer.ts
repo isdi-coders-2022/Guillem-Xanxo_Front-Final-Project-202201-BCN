@@ -12,6 +12,9 @@ const getTripsReducer = (
     case actionTypes.getAllTrips:
       newTripArray = [...(action as TripsAction).trips];
       break;
+    case actionTypes.getUserTrips:
+      newTripArray = [...(action as TripsAction).trips];
+      break;
     case actionTypes.deleteThisTrip:
       newTripArray = currentTrips.filter(
         (trip: TripReceived) => trip.id !== (action as deleteTripAction).id
