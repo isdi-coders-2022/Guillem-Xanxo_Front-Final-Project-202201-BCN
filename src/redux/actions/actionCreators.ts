@@ -22,6 +22,11 @@ export const getAllTripsAction = (trips: TripReceived[]): TripsAction => ({
   trips,
 });
 
+export const getUserTripsAction = (trips: TripReceived[]): TripsAction => ({
+  type: actionTypes.getUserTrips,
+  trips,
+});
+
 export const deleteThisTripAction = (id: string): deleteTripAction => ({
   type: actionTypes.deleteThisTrip,
   id,

@@ -3,6 +3,7 @@ import {
   deleteThisTripAction,
   getAllTripsAction,
   getThisTripAction,
+  getUserTripsAction,
   userLoginAction,
   userRegisterAction,
 } from "./actionCreators";
@@ -44,6 +45,48 @@ describe("Given a getAllTripsAction action", () => {
       };
 
       const action = getAllTripsAction(trips);
+
+      expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a getUserTripsAction action", () => {
+  describe("When it receives an array with trips", () => {
+    test("Then it should return an action object with type 'get-user-trips'", () => {
+      const trips: TripReceived[] = [
+        {
+          origen: "Barcelona",
+          desti: "Sort",
+          places: "3",
+          horaSortida: "18",
+          horaSortidaNumber: 18,
+          comentaris: "S'accepten animals",
+          dones: false,
+          data: "2018-02-12",
+          dataNumber: 20180212,
+          id: "1",
+        },
+        {
+          origen: "Barcelona",
+          desti: "Sort",
+          places: "3",
+          horaSortida: "18",
+          horaSortidaNumber: 18,
+          comentaris: "S'accepten animals",
+          dones: false,
+          data: "2018-02-12",
+          dataNumber: 20180212,
+          id: "2",
+        },
+      ];
+
+      const expectedAction = {
+        type: "get-user-trips",
+        trips,
+      };
+
+      const action = getUserTripsAction(trips);
 
       expect(action).toEqual(expectedAction);
     });
