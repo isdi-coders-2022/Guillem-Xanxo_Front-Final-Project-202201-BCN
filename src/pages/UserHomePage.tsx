@@ -1,14 +1,22 @@
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Button from "../components/ButtonComponent/ButtonComponent";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { cleanUserAction } from "../redux/actions/actionCreators";
+import { RootState } from "../redux/store";
+import { useEffect } from "react";
+import TripCatwalkComponent from "../components/TripCatwalkComponent/TripCatwalkComponent";
 
 const UserHomePage = (): JSX.Element => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const tripList = useSelector((state: RootState) => state.getTrips);
+
+  useEffect(() => {
+    dispatch(getAllTripsThunk);
+  }, [dispatch]);
 
   const goToCrear = () => {
     navigate("/viatges/crear");
@@ -46,6 +54,7 @@ const UserHomePage = (): JSX.Element => {
         className="crear-viatge-button"
         actionOnClick={tancaSessio}
       />
+      <TripCatwalkComponent trips={tripList}
     </>
   );
 };
