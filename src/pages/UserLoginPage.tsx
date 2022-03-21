@@ -1,6 +1,7 @@
 import LoginComponent from "../components/LoginComponent/LoginComponent";
 import styled from "styled-components";
 import img from "../assets/map.webp";
+import Toastr from "../components/Toastr/Toastr";
 
 const Content = styled.div`
   background-image: url(${img});
@@ -13,6 +14,7 @@ const UserLoginPage = () => {
     <>
       <Content>
         <LoginComponent />
+        <Toastr />
       </Content>
     </>
   );

@@ -4,6 +4,7 @@ import { Login } from "../../interfaces/Login";
 import { userLoginAction, userRegisterAction } from "../actions/actionCreators";
 import axios from "axios";
 import { Usuari } from "../../interfaces/Usuari";
+import { toast } from "react-toastify";
 
 export const loginThunk =
   (userData: Login) =>
@@ -13,9 +14,12 @@ export const loginThunk =
       data: { token },
     } = await axios.post(url, userData);
 
-    if (token !== undefined) {
+    if (token) {
       localStorage.setItem("tokenKey", token);
       dispatch(userLoginAction(userData));
+      toast.success("Usuari correcte");
+    } else {
+      toast.error("Hi ha hagut algun error");
     }
   };
 
