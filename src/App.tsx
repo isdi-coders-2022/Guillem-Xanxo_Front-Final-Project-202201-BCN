@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import ShowTripsPage from "./pages/ShowTripsPage";
 import CreateTripPage from "./pages/CreateTripPage";
@@ -8,8 +8,19 @@ import UserRegisterPage from "./pages/UserRegisterPage";
 import UserHomePage from "./pages/UserHomePage";
 import ShowTripDetailPage from "./pages/ShowTripDetailPage";
 import Toastr from "./components/Toastr/Toastr";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 function App() {
+  /* const user = useSelector((state: RootState) => state.user);
+  let home = false;
+
+  useEffect(() => {
+    if (user.usuari) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      home = true;
+    }
+  }, [user]); */
   const token = localStorage.getItem("tokenKey");
 
   return (
@@ -28,7 +39,10 @@ function App() {
         <Route path="/usuari/login" element={<UserLoginPage />}></Route>
         <Route path="/usuari/register" element={<UserRegisterPage />}></Route>
 
-        <Route path="/usuari/home" element={<UserHomePage />}></Route>
+        <Route
+          path="/usuari/home"
+          element={token ? <UserHomePage /> : <UserLoginPage />}
+        ></Route>
         <Route path="/usuari/viatges" element={<></>}></Route>
         <Route path="/usuari/viatges/detall" element={<></>}></Route>
       </Routes>

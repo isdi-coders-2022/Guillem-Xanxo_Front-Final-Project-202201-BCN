@@ -14,7 +14,7 @@ const userReducer = (
 
   switch (action.type) {
     case actionTypes.userLogin:
-      loggedInUser = action.user;
+      loggedInUser = { usuari: action.user.usuari, contrassenya: "" };
       break;
 
     case actionTypes.userRegister:
