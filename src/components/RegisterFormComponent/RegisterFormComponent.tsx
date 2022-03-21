@@ -3,12 +3,17 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
 import { registerThunk } from "../../redux/thunks/userThunks";
+import Button from "../ButtonComponent/ButtonComponent";
 import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
 import FormContainer from "./RegisterFormComponent.styles";
 
 const RegisterFormComponent = (): JSX.Element => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate(`/usuari/login`);
+  };
 
   const blankFields = {
     usuari: "",
@@ -110,6 +115,12 @@ const RegisterFormComponent = (): JSX.Element => {
           disabled={!isFilled}
           text="Registra't"
         ></ButtonNoAction>
+        <Button
+          nature="enrere-crono"
+          className="enrere-crono-button"
+          text="Enrere"
+          actionOnClick={goToLogin}
+        />
       </FormContainer>
     </>
   );

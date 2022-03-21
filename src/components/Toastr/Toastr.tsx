@@ -4,7 +4,19 @@ import "react-toastify/dist/ReactToastify.css";
 
 class Toastr extends Component {
   render() {
-    return <ToastContainer />;
+    return (
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover={false}
+      />
+    );
   }
 }
 export default Toastr;

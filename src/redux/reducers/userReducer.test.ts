@@ -6,7 +6,7 @@ describe("Given a userReducer", () => {
       const user = { usuari: "", contrassenya: "" };
       const expectedUser = {
         usuari: "conchi",
-        contrassenya: "123123",
+        contrassenya: "",
       };
       const action = {
         type: "user-login",

@@ -14,11 +14,15 @@ const userReducer = (
 
   switch (action.type) {
     case actionTypes.userLogin:
-      loggedInUser = action.user;
+      loggedInUser = { usuari: action.user.usuari, contrassenya: "" };
       break;
 
     case actionTypes.userRegister:
       loggedInUser = action.user;
+      break;
+
+    case actionTypes.cleanUser:
+      loggedInUser = { usuari: "", contrassenya: "" };
       break;
 
     default:

@@ -50,6 +50,8 @@ export const createTripThunk =
         body: JSON.stringify(newTrip),
       }
     );
+    console.log(newTrip);
+
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));
       toast.success("Viatge creat correctament");

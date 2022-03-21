@@ -48,3 +48,7 @@ export const getThisTripAction = (trip: TripReceived): TripDetailAction => ({
   type: actionTypes.getThisTrip,
   trip,
 });
+
+export const cleanUserAction = () => ({
+  type: actionTypes.cleanUser,
+});
