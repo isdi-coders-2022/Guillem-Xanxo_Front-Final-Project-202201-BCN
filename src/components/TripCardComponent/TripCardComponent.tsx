@@ -7,9 +7,11 @@ import { TripCardComponentStyles } from "./TripCardComponent.styles";
 
 interface TripCardComponentProps {
   trip: TripReceived;
+  visibility: String;
 }
 export const TripCardComponent = ({
   trip: { origen, desti, places, horaSortida, comentaris, dones, id },
+  visibility,
 }: TripCardComponentProps): JSX.Element => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -59,7 +61,7 @@ export const TripCardComponent = ({
             </>
           )}
 
-          {localStorage.getItem("tokenKey") && (
+          {visibility === "user" && (
             <Button
               nature="delete"
               className="delete-button"

@@ -23,7 +23,7 @@ describe("Given a TripCardComponent component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <TripCardComponent trip={trip} />
+            <TripCardComponent trip={trip} visibility="" />
           </Provider>
         </BrowserRouter>
       );
@@ -52,7 +52,7 @@ describe("Given a TripCardComponent component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <TripCardComponent trip={trip} />
+            <TripCardComponent trip={trip} visibility="" />
           </Provider>
         </BrowserRouter>
       );

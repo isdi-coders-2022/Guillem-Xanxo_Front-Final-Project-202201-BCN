@@ -8,6 +8,7 @@ import { cleanUserAction } from "../redux/actions/actionCreators";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import TripCatwalkComponent from "../components/TripCatwalkComponent/TripCatwalkComponent";
+import { getAllTripsThunk } from "../redux/thunks/tripsThunks";
 
 const UserHomePage = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -54,7 +55,8 @@ const UserHomePage = (): JSX.Element => {
         className="crear-viatge-button"
         actionOnClick={tancaSessio}
       />
-      <TripCatwalkComponent trips={tripList}
+      <h2>Viatges que has publicat</h2>
+      <TripCatwalkComponent trips={tripList} visibility="user" />
     </>
   );
 };

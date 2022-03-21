@@ -16,7 +16,7 @@ const ShowTripsPage = (): JSX.Element => {
   return (
     <>
       <HeaderComponent />
-      <TripCatwalkComponent trips={tripList} />
+      <TripCatwalkComponent trips={tripList} visibility="public" />
     </>
   );
 };
