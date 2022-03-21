@@ -13,14 +13,6 @@ import { RootState } from "./redux/store";
 
 function App() {
   const user = useSelector((state: RootState) => state.user);
-  let home = false;
-
-  useEffect(() => {
-    if (user.usuari) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      home = true;
-    }
-  }, [user]);
 
   return (
     <>
@@ -40,7 +32,7 @@ function App() {
 
         <Route
           path="/usuari/home"
-          element={home ? <UserHomePage /> : <UserLoginPage />}
+          element={user.usuari ? <UserHomePage /> : <UserLoginPage />}
         ></Route>
         <Route path="/usuari/viatges" element={<></>}></Route>
         <Route path="/usuari/viatges/detall" element={<></>}></Route>

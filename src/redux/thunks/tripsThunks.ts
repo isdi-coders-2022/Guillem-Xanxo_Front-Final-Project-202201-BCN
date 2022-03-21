@@ -1,3 +1,4 @@
+import { request } from "http";
 import { toast } from "react-toastify";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
@@ -50,6 +51,8 @@ export const createTripThunk =
         body: JSON.stringify(newTrip),
       }
     );
+    console.log(newTrip);
+
     if (response.ok) {
       dispatch(createThisTripAction(newTrip));
       toast.success("Viatge creat correctament");
