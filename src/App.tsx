@@ -10,6 +10,8 @@ import ShowTripDetailPage from "./pages/ShowTripDetailPage";
 import Toastr from "./components/Toastr/Toastr";
 
 function App() {
+  const token = localStorage.getItem("tokenKey");
+
   return (
     <>
       <Toastr />
@@ -25,6 +27,7 @@ function App() {
         <Route path="/viatges/origen" element={<></>}></Route>
         <Route path="/usuari/login" element={<UserLoginPage />}></Route>
         <Route path="/usuari/register" element={<UserRegisterPage />}></Route>
+
         <Route path="/usuari/home" element={<UserHomePage />}></Route>
         <Route path="/usuari/viatges" element={<></>}></Route>
         <Route path="/usuari/viatges/detall" element={<></>}></Route>

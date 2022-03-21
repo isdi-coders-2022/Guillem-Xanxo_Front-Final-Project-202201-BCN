@@ -14,7 +14,6 @@ const UserLoginPage = () => {
     <>
       <Content>
         <LoginComponent />
-        <Toastr />
       </Content>
     </>
   );

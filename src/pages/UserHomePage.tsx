@@ -1,17 +1,13 @@
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getAllTripsThunk } from "../redux/thunks/tripsThunks";
+
 import Button from "../components/ButtonComponent/ButtonComponent";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { cleanUserAction } from "../redux/actions/actionCreators";
 
 const UserHomePage = (): JSX.Element => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllTripsThunk);
-  }, [dispatch]);
-
   const navigate = useNavigate();
 
   const goToCrear = () => {
@@ -24,7 +20,9 @@ const UserHomePage = (): JSX.Element => {
 
   const tancaSessio = () => {
     localStorage.removeItem("tokenKey");
+    dispatch(cleanUserAction());
     navigate("/viatges/crono");
+    toast.success("Has tancat sessió");
   };
 
   return (

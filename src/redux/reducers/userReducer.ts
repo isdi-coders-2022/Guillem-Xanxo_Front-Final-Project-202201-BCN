@@ -21,6 +21,10 @@ const userReducer = (
       loggedInUser = action.user;
       break;
 
+    case actionTypes.cleanUser:
+      loggedInUser = { usuari: "", contrassenya: "" };
+      break;
+
     default:
       loggedInUser = { ...currentUser };
       break;

@@ -5,6 +5,7 @@ const actionTypes = {
   userLogin: "user-login",
   userRegister: "user-register",
   getThisTrip: "get-this-trip",
+  cleanUser: "clean-user",
 };
 
 export default actionTypes;
