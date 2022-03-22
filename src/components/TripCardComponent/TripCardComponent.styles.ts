@@ -9,7 +9,7 @@ export const TripCardComponentStyles = styled.div`
   border: solid 2px black;
   font-size: 16px;
   border-radius: 15px;
-  max-width: 550px;
+  max-width: 600px;
   & .trip-card {
     display: flex;
     flex-direction: row;

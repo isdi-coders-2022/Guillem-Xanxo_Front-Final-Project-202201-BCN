@@ -1,11 +1,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
 import { TripCardComponent } from "../components/TripCardComponent/TripCardComponent";
 import { RootState } from "../redux/store";
 import { getThisTripThunk } from "../redux/thunks/tripsThunks";
+
+const TripCatwalk = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ShowTripDetailPage = (): JSX.Element => {
   const { id } = useParams();
@@ -19,7 +27,9 @@ const ShowTripDetailPage = (): JSX.Element => {
   return (
     <>
       <HeaderComponent />
-      <TripCardComponent trip={tripDetail} visibility="public" />
+      <TripCatwalk>
+        <TripCardComponent trip={tripDetail} visibility="public" />
+      </TripCatwalk>
     </>
   );
 };

@@ -58,13 +58,6 @@ export const TripCardComponent = ({
             </article>
           </section>
           <section className="trip-buttons">
-            {location.pathname === `/viatges/detall/${id}` && (
-              <>
-                <p className="categoria_negreta">Comentaris:</p>
-                <p className="categoria"> {comentaris}</p>
-              </>
-            )}
-
             {visibility === "user" && (
               <Button
                 nature="delete"
@@ -91,6 +84,12 @@ export const TripCardComponent = ({
             )}
           </section>
         </div>
+        {location.pathname === `/viatges/detall/${id}` && (
+          <>
+            <p className="categoria_negreta">Comentaris:</p>
+            <p className="categoria"> {comentaris}</p>
+          </>
+        )}
         {dones === true && (
           <p className="categoria_negreta">
             Aquest viatge és exclusiu per a passetgeres
