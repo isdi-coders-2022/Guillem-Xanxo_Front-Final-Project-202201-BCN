@@ -1,13 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import HeaderComponent from "./HeaderComponent";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
     test("Then it should render a heading", () => {
       render(
         <BrowserRouter>
-          <HeaderComponent />
+          <Provider store={store}>
+            <HeaderComponent />
+          </Provider>
         </BrowserRouter>
       );
 
@@ -19,7 +22,9 @@ describe("Given a Header component", () => {
     test("Then it should render a button", () => {
       render(
         <BrowserRouter>
-          <HeaderComponent />
+          <Provider store={store}>
+            <HeaderComponent />
+          </Provider>
         </BrowserRouter>
       );
 
