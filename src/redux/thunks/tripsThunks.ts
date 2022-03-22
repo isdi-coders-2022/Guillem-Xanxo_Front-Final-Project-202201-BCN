@@ -72,7 +72,7 @@ export const createTripThunk =
   };
 
 export const getThisTripThunk =
-  (id: String) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
+  (id: string) => async (dispatch: ThunkDispatch<void, unknown, AnyAction>) => {
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}viatges/${id}`
     );

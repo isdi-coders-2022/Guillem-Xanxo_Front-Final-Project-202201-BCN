@@ -2,12 +2,12 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { TripReceived } from "../../interfaces/TripReceived";
 import { deleteTripThunk } from "../../redux/thunks/tripsThunks";
-import Button from "../ButtonComponent/ButtonComponent";
+import Button from "../Button/Button";
 import { TripCardComponentStyles } from "./TripCardComponent.styles";
 
 interface TripCardComponentProps {
   trip: TripReceived;
-  visibility: String;
+  visibility: string;
 }
 export const TripCardComponent = ({
   trip: { origen, desti, places, horaSortida, comentaris, dones, id, data },
@@ -58,18 +58,11 @@ export const TripCardComponent = ({
             </article>
           </section>
           <section className="trip-buttons">
-            {location.pathname === `/viatges/detall/${id}` && (
-              <>
-                <p className="categoria_negreta">Comentaris:</p>
-                <p className="categoria"> {comentaris}</p>
-              </>
-            )}
-
             {visibility === "user" && (
               <Button
                 nature="delete"
                 className="delete-button"
-                text=""
+                text="Esborra"
                 actionOnClick={() => deleteTrip(id)}
               />
             )}
@@ -91,6 +84,12 @@ export const TripCardComponent = ({
             )}
           </section>
         </div>
+        {location.pathname === `/viatges/detall/${id}` && (
+          <>
+            <p className="categoria_negreta">Comentaris:</p>
+            <p className="categoria"> {comentaris}</p>
+          </>
+        )}
         {dones === true && (
           <p className="categoria_negreta">
             Aquest viatge és exclusiu per a passetgeres

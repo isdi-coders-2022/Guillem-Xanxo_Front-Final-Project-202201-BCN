@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Trip } from "../../interfaces/Trip";
 import { createTripThunk } from "../../redux/thunks/tripsThunks";
-import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
+import ButtonNoAction from "../ButtonNoAction/ButtonNoAction";
 import FormContainer from "./CreateFormComponent.styles";
 
 const CreateFormComponent = (): JSX.Element => {

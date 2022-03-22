@@ -32,6 +32,7 @@ const Button = ({
     <>
       {nature === "usuari" && (
         <ButtonUsuari
+          aria-label="Entra com a usuari"
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
@@ -44,6 +45,7 @@ const Button = ({
 
       {nature === "home" && (
         <ButtonUsuari
+          aria-label="Espai d'usuari"
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
@@ -62,7 +64,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faCircleXmark} />
+          <FontAwesomeIcon icon={faCircleXmark} className="icon" />
         </ButtonDelete>
       )}
 

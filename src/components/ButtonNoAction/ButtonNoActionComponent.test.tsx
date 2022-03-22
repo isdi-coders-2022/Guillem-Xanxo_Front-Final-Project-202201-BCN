@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ButtonNoAction from "./ButtonNoActionComponent";
+import ButtonNoAction from "./ButtonNoAction";
 
 describe("Given a ButtonNoAction component", () => {
   describe("When it receives the text 'Crea Viatge", () => {

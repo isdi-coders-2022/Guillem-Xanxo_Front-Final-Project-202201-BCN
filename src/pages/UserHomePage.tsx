@@ -1,7 +1,7 @@
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
 import { useDispatch, useSelector } from "react-redux";
 
-import Button from "../components/ButtonComponent/ButtonComponent";
+import Button from "../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { cleanUserAction } from "../redux/actions/actionCreators";

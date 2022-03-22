@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 interface TripCatwalkComponentProps {
   trips: TripReceived[];
-  visibility: String;
+  visibility: string;
 }
 
 const TripCatwalk = styled.div`
