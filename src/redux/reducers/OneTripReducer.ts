@@ -34,10 +34,12 @@ const OneTripReducer = (
   let newTripArray: TripReceived;
 
   if (actionTypes.getThisTrip) {
-    return (newTripArray = { ...action.trip });
+    newTripArray = { ...action.trip };
+    return newTripArray;
   } else {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    return (newTripArray = { ...currentTrip });
+    newTripArray = { ...currentTrip };
+    return newTripArray;
   }
 };
 
