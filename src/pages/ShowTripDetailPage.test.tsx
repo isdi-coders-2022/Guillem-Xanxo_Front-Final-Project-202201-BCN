@@ -2,15 +2,15 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../redux/store";
-import ShowTripsPage from "./ShowTripsPage";
+import ShowTripDetailPage from "./ShowTripDetailPage";
 
-describe("Given a ShowTripsPage page", () => {
+describe("Given an ShowTripDetailPage page", () => {
   describe("When it's rendered", () => {
     test("Then it should render a heading with text Transporta't Pallars", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <ShowTripsPage />
+            <ShowTripDetailPage />
           </Provider>
         </BrowserRouter>
       );
