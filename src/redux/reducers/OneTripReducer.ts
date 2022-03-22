@@ -33,15 +33,12 @@ const OneTripReducer = (
 ) => {
   let newTripArray: TripReceived;
 
-  switch (action.type) {
-    case actionTypes.getThisTrip:
-      newTripArray = { ...(action as TripDetailAction).trip };
-      break;
-    default:
-      newTripArray = { ...currentTrip };
-      break;
+  if (actionTypes.getThisTrip) {
+    return (newTripArray = { ...action.trip });
+  } else {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    return (newTripArray = { ...currentTrip });
   }
-  return newTripArray;
 };
 
 export default OneTripReducer;

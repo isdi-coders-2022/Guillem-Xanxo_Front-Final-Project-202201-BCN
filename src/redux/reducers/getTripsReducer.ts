@@ -9,7 +9,7 @@ import actionTypes from "../actions/actionTypes";
 const getTripsReducer = (
   currentTrips: TripReceived[] = [],
   action: TripsAction | deleteTripAction | UserTripsAction
-) => {
+): TripReceived[] => {
   let newTripArray: TripReceived[];
 
   switch (action.type) {

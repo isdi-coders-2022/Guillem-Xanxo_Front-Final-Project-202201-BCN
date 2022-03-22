@@ -1,4 +1,4 @@
-import Button from "../ButtonComponent/ButtonComponent";
+import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { HeaderComponentStyles } from "./HeaderComponent.styles";
 import { RootState } from "../../redux/store";

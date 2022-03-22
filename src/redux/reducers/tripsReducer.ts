@@ -17,7 +17,7 @@ const tripsReducer = (
       id: "",
     },
   }
-) => {
+): Trip[] => {
   let newTripArray: Trip[];
 
   switch (action.type) {

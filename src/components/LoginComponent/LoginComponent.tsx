@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Usuari } from "../../interfaces/Usuari";
 import { RootState } from "../../redux/store";
 import { loginThunk } from "../../redux/thunks/userThunks";
-import Button from "../ButtonComponent/ButtonComponent";
-import ButtonNoAction from "../ButtonNoActionComponent/ButtonNoActionComponent";
+import Button from "../Button/Button";
+import ButtonNoAction from "../ButtonNoAction/ButtonNoAction";
 import FormContainer from "./LoginComponent.styles";
 
 const LoginComponent = (): JSX.Element => {
