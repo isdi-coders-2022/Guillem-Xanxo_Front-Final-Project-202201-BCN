@@ -17,6 +17,10 @@ export const ButtonUsuari = styled(ButtonGeneric)`
   background-color: white;
   margin: 21px;
   margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 `;
 
 export const ButtonCreaViatge = styled(ButtonGeneric)`
@@ -30,6 +34,16 @@ export const ButtonCreaViatge = styled(ButtonGeneric)`
 
 export const ButtonDetall = styled(ButtonGeneric)`
   border: solid 2px black;
+  width: 170px;
+  height: 40px;
+  background-color: white;
+  margin: 10px;
+  margin-bottom: 20px;
+`;
+
+export const ButtonDelete = styled(ButtonGeneric)`
+  border: solid 2px red;
+  color: red;
   width: 170px;
   height: 40px;
   background-color: white;
