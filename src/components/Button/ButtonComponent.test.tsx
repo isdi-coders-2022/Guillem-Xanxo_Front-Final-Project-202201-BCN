@@ -135,4 +135,23 @@ describe("Given a Button component", () => {
       expect(action).toHaveBeenCalled();
     });
   });
+
+  describe("When it receives an action and a button with type tanca-sessio is clicked", () => {
+    test("Then it should call the action", () => {
+      const action = jest.fn();
+
+      render(
+        <Button
+          actionOnClick={action}
+          text="text"
+          nature="tanca-sessio"
+          className="button"
+        />
+      );
+
+      userEvent.click(screen.getByRole("button"));
+
+      expect(action).toHaveBeenCalled();
+    });
+  });
 });
