@@ -10,7 +10,7 @@ interface TripCardComponentProps {
   visibility: String;
 }
 export const TripCardComponent = ({
-  trip: { origen, desti, places, horaSortida, comentaris, dones, id },
+  trip: { origen, desti, places, horaSortida, comentaris, dones, id, data },
   visibility,
 }: TripCardComponentProps): JSX.Element => {
   const location = useLocation();
@@ -33,65 +33,69 @@ export const TripCardComponent = ({
     <>
       <TripCardComponentStyles>
         <div className="trip-card">
-          <article className="card-properties_big">
+          <section className="trip-info">
+            <article className="card-properties">
+              <p className="categoria">Data:</p>
+              <p className="categoria_negreta"> {data}</p>
+            </article>
+
             <article className="card-properties">
               <p className="categoria">Origen:</p>
               <p className="categoria_negreta"> {origen}</p>
             </article>
             <article className="card-properties">
-              <p className="categoria">Hora:</p>
-              <p className="categoria_negreta"> {horaSortida}</p>
-            </article>
-          </article>
-          <article className="card-properties_big">
-            <article className="card-properties">
               <p className="categoria">Destí:</p>
               <p className="categoria_negreta"> {desti}</p>
             </article>
             <article className="card-properties">
+              <p className="categoria">Hora:</p>
+              <p className="categoria_negreta"> {horaSortida}</p>
+            </article>
+
+            <article className="card-properties">
               <p className="categoria">Places:</p>
               <p className="categoria_negreta"> {places}</p>
             </article>
-          </article>
+          </section>
+          <section className="trip-buttons">
+            {location.pathname === `/viatges/detall/${id}` && (
+              <>
+                <p className="categoria_negreta">Comentaris:</p>
+                <p className="categoria"> {comentaris}</p>
+              </>
+            )}
 
-          {location.pathname === `/viatges/detall/${id}` && (
-            <>
-              <p className="categoria_negreta">Comentaris:</p>
-              <p className="categoria"> {comentaris}</p>
-            </>
-          )}
+            {visibility === "user" && (
+              <Button
+                nature="delete"
+                className="delete-button"
+                text=""
+                actionOnClick={() => deleteTrip(id)}
+              />
+            )}
 
-          {visibility === "user" && (
-            <Button
-              nature="delete"
-              className="delete-button"
-              text=""
-              actionOnClick={() => deleteTrip(id)}
-            />
-          )}
-
-          {location.pathname === `/viatges/detall/${id}` ? (
-            <Button
-              nature="enrere-crono"
-              className="enrere-crono-button"
-              text="Enrere"
-              actionOnClick={goToCrono}
-            />
-          ) : (
-            <Button
-              nature="detall"
-              className="detall-button"
-              text="Més info"
-              actionOnClick={goToDetall}
-            />
-          )}
-
-          {dones === true && (
-            <p className="categoria_negreta">
-              Aquest viatge és exclusiu per a passetgeres
-            </p>
-          )}
+            {location.pathname === `/viatges/detall/${id}` ? (
+              <Button
+                nature="enrere-crono"
+                className="enrere-crono-button"
+                text="Enrere"
+                actionOnClick={goToCrono}
+              />
+            ) : (
+              <Button
+                nature="detall"
+                className="detall-button"
+                text="Més info"
+                actionOnClick={goToDetall}
+              />
+            )}
+          </section>
         </div>
+        {dones === true && (
+          <p className="categoria_negreta">
+            Aquest viatge és exclusiu per a passetgeres
+          </p>
+        )}
       </TripCardComponentStyles>
     </>
   );

@@ -37,25 +37,29 @@ const UserHomePage = (): JSX.Element => {
   return (
     <>
       <HeaderComponent />
-      <Button
-        nature="crear-viatge"
-        text="Crear viatge"
-        className="crear-viatge-button"
-        actionOnClick={goToCrear}
-      />
-      <Button
-        nature="cerca-viatge"
-        text="Cerca viatge"
-        className="crear-viatge-button"
-        actionOnClick={goToCerca}
-      />
-      <Button
-        nature="tanca-sessio"
-        text="Tanca sessió"
-        className="crear-viatge-button"
-        actionOnClick={tancaSessio}
-      />
-      <h2>Viatges que has publicat</h2>
+      <div className="home-buttons">
+        <Button
+          nature="crear-viatge"
+          text="Crear viatge"
+          className="crear-viatge-button"
+          actionOnClick={goToCrear}
+        />
+        <Button
+          nature="cerca-viatge"
+          text="Cerca viatge"
+          className="crear-viatge-button"
+          actionOnClick={goToCerca}
+        />
+        <Button
+          nature="tanca-sessio"
+          text="Tanca sessió"
+          className="crear-viatge-button"
+          actionOnClick={tancaSessio}
+        />
+      </div>
+      <section className="viatges-publicats">
+        <h2>Viatges que has publicat</h2>
+      </section>
       <TripCatwalkComponent trips={tripList} visibility="user" />
     </>
   );

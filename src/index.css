@@ -48,3 +48,23 @@ p {
 .icon {
   margin-left: 15px;
 }
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.viatges-publicats {
+  border-bottom: 1px solid black;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.delete-button {
+  border: solid 2px red;
+}

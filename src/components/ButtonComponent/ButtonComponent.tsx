@@ -1,6 +1,6 @@
 import {
   ButtonUsuari,
-  ButtonGeneric,
+  ButtonDelete,
   ButtonCreaViatge,
   ButtonDetall,
 } from "./ButtonComponent.styles";
@@ -55,7 +55,7 @@ const Button = ({
       )}
 
       {nature === "delete" && (
-        <ButtonGeneric
+        <ButtonDelete
           className={className}
           onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
             actionOnClick()
@@ -63,7 +63,7 @@ const Button = ({
         >
           {text}
           <FontAwesomeIcon icon={faCircleXmark} />
-        </ButtonGeneric>
+        </ButtonDelete>
       )}
 
       {nature === "crear-viatge" && (
