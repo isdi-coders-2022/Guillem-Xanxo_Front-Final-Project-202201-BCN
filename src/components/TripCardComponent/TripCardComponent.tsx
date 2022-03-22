@@ -10,7 +10,7 @@ interface TripCardComponentProps {
   visibility: String;
 }
 export const TripCardComponent = ({
-  trip: { origen, desti, places, horaSortida, comentaris, dones, id },
+  trip: { origen, desti, places, horaSortida, comentaris, dones, id, data },
   visibility,
 }: TripCardComponentProps): JSX.Element => {
   const location = useLocation();
@@ -33,6 +33,10 @@ export const TripCardComponent = ({
     <>
       <TripCardComponentStyles>
         <div className="trip-card">
+          <article className="card-properties">
+            <p className="categoria">Data:</p>
+            <p className="categoria_negreta"> {data}</p>
+          </article>
           <article className="card-properties_big">
             <article className="card-properties">
               <p className="categoria">Origen:</p>
