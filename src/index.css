@@ -42,7 +42,7 @@ p {
 
 .container {
   max-width: 500px;
-  margin: 60px auto;
+  margin: auto;
 }
 
 .icon {
@@ -67,4 +67,9 @@ p {
 
 .delete-button {
   border: solid 2px red;
+}
+
+.column-right {
+  display: flex;
+  flex-direction: column;
 }

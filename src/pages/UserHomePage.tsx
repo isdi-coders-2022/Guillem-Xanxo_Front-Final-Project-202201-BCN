@@ -9,6 +9,15 @@ import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import TripCatwalkComponent from "../components/TripCatwalkComponent/TripCatwalkComponent";
 import { getUserTripsThunk } from "../redux/thunks/tripsThunks";
+import styled from "styled-components";
+
+const Responsive = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+`;
 
 const UserHomePage = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -37,30 +46,34 @@ const UserHomePage = (): JSX.Element => {
   return (
     <>
       <HeaderComponent />
-      <div className="home-buttons">
-        <Button
-          nature="crear-viatge"
-          text="Crear viatge"
-          className="crear-viatge-button"
-          actionOnClick={goToCrear}
-        />
-        <Button
-          nature="cerca-viatge"
-          text="Cerca viatge"
-          className="crear-viatge-button"
-          actionOnClick={goToCerca}
-        />
-        <Button
-          nature="tanca-sessio"
-          text="Tanca sessió"
-          className="crear-viatge-button"
-          actionOnClick={tancaSessio}
-        />
-      </div>
-      <section className="viatges-publicats">
-        <h2>Viatges que has publicat</h2>
-      </section>
-      <TripCatwalkComponent trips={tripList} visibility="user" />
+      <Responsive>
+        <div className="home-buttons">
+          <Button
+            nature="crear-viatge"
+            text="Crear viatge"
+            className="crear-viatge-button"
+            actionOnClick={goToCrear}
+          />
+          <Button
+            nature="cerca-viatge"
+            text="Cerca viatge"
+            className="crear-viatge-button"
+            actionOnClick={goToCerca}
+          />
+          <Button
+            nature="tanca-sessio"
+            text="Tanca sessió"
+            className="crear-viatge-button"
+            actionOnClick={tancaSessio}
+          />
+        </div>
+        <div className="column-right">
+          <section className="viatges-publicats">
+            <h2>Viatges que has publicat</h2>
+          </section>
+          <TripCatwalkComponent trips={tripList} visibility="user" />
+        </div>
+      </Responsive>
     </>
   );
 };
