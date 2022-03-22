@@ -62,7 +62,7 @@ const Button = ({
           }
         >
           {text}
-          <FontAwesomeIcon icon={faCircleXmark} />
+          <FontAwesomeIcon icon={faCircleXmark} className="icon" />
         </ButtonDelete>
       )}
 
