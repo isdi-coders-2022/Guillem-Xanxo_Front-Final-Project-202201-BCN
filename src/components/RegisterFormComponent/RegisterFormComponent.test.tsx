@@ -6,13 +6,18 @@ import { store } from "../../redux/store";
 import RegisterFormComponent from "./RegisterFormComponent";
 
 const mockUseDispatch = jest.fn();
-
 jest.mock("react-redux", () => {
   return {
     ...jest.requireActual("react-redux"),
     useDispatch: () => mockUseDispatch,
   };
 });
+
+const mockNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 describe("Given a Register component", () => {
   describe("When it is rendered", () => {
@@ -81,6 +86,23 @@ describe("Given a Register component", () => {
       userEvent.click(button);
 
       expect(mockUseDispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it is rendered and it renders the button Enrere", () => {
+    test("Then if clicked it should navigate to another url", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <RegisterFormComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const expectedButton = screen.getByRole("button", { name: "Enrere" });
+      userEvent.click(expectedButton);
+
+      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });

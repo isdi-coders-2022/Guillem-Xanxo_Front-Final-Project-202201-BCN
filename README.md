@@ -4,7 +4,7 @@ This is a platform where people can post their private trips from everywhere to 
 
 It has been written in TypeScript and React Redux in order to profit from it being a web app. This way it can be easily accessible from any device and be crossplatform. Redux has been mandatory for this project as a final project in ISDI Coders bootcamp, but it prepare the app to be able to growth as the traffic does.
 
-Production site:[https://transportatpallars-guillem-xanxo.netlify.app/](Transporta't Pallars)
+Production site:[https://transportatpallars-guillem-xanxo.netlify.app/](Transportat Pallars)
 REST API supporting this project: [https://github.com/isdi-coders-2022/Guillem-Xanxo_Back-Final-Project-202201-BCN](Project)
 
 ## How to start as a developer/contributor
@@ -15,7 +15,7 @@ Please, fork the project in orther to add features if you would like to contribu
 
 This command will install all npm packages listed in dependencies JSON.
 
-### `npm build``
+### `npm build`
 
 This command will prepare and build the project for production.
 
