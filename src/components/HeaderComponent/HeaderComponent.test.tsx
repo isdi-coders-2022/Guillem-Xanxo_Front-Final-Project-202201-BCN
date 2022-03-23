@@ -4,6 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import userEvent from "@testing-library/user-event";
+import thunk from "redux-thunk";
+import configureMockStore from "redux-mock-store";
 
 const mockNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
@@ -47,6 +49,28 @@ describe("Given a Header component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
+            <HeaderComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const expectedButton = screen.getByRole("button");
+      userEvent.click(expectedButton);
+
+      expect(mockNavigate).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it is rendered and it renders the button Home", () => {
+    test("Then if clicked it should navigate to another url", () => {
+      const mockStore = configureMockStore([thunk]);
+      const storeMock = mockStore({
+        user: { loggedIn: true },
+      });
+
+      render(
+        <BrowserRouter>
+          <Provider store={storeMock}>
             <HeaderComponent />
           </Provider>
         </BrowserRouter>
