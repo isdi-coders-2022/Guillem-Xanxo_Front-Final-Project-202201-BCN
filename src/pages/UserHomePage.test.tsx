@@ -4,8 +4,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "../redux/store";
 import UserHomePage from "./UserHomePage";
-import thunk from "redux-thunk";
-import configureMockStore from "redux-mock-store";
 
 const mockNavigate = jest.fn();
 

@@ -101,4 +101,34 @@ describe("Given a TripCardComponent component", () => {
       expect(mockNavigate).toHaveBeenCalled();
     });
   });
+
+  describe("When the Esborra button is clicked", () => {
+    test.skip("Then it should invoke a function", () => {
+      const trip = {
+        origen: "Barcelona",
+        desti: "Sort",
+        places: "3",
+        horaSortida: "18",
+        comentaris: "S'accepten animals",
+        dones: true,
+        data: "2018-02-12 19:23:45",
+        id: "1",
+        horaSortidaNumber: 1000,
+        dataNumber: 20220917,
+      };
+
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <TripCardComponent trip={trip} visibility="user" />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const esborraButton = screen.getByRole("button", { name: "Esborra" });
+      userEvent.click(esborraButton);
+
+      expect(mockNavigate).toHaveBeenCalled();
+    });
+  });
 });
