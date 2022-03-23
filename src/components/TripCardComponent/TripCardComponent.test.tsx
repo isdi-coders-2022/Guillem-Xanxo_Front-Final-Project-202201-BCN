@@ -102,8 +102,8 @@ describe("Given a TripCardComponent component", () => {
     });
   });
 
-  describe("When the Esborra button is clicked", () => {
-    test.skip("Then it should invoke a function", () => {
+  describe("When there is a visibility = 'user'", () => {
+    test.only("Then it should display a button Esborra", () => {
       const trip = {
         origen: "Barcelona",
         desti: "Sort",
@@ -126,9 +126,8 @@ describe("Given a TripCardComponent component", () => {
       );
 
       const esborraButton = screen.getByRole("button", { name: "Esborra" });
-      userEvent.click(esborraButton);
 
-      expect(mockNavigate).toHaveBeenCalled();
+      expect(esborraButton).toBeInTheDocument();
     });
   });
 });

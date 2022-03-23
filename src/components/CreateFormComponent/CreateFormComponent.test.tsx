@@ -29,6 +29,20 @@ describe("Given a CreateForm component", () => {
 
       expect(text).toHaveLength(3);
     });
+
+    test("Then it should display a checkbox", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <CreateFormComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const dones = screen.getByRole("checkbox");
+
+      expect(dones).toBeInTheDocument();
+    });
   });
 
   describe("When it is filled with the required fields", () => {
