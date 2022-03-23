@@ -39,8 +39,8 @@ describe("Given an UserHomePage page", () => {
         </BrowserRouter>
       );
 
-      const deleteButton = screen.getByRole("button", { name: "Crear viatge" });
-      userEvent.click(deleteButton);
+      const crearButton = screen.getByRole("button", { name: "Crear viatge" });
+      userEvent.click(crearButton);
 
       expect(mockNavigate).toHaveBeenCalled();
     });
@@ -56,8 +56,8 @@ describe("Given an UserHomePage page", () => {
         </BrowserRouter>
       );
 
-      const deleteButton = screen.getByRole("button", { name: "Cerca viatge" });
-      userEvent.click(deleteButton);
+      const cercaButton = screen.getByRole("button", { name: "Cerca viatge" });
+      userEvent.click(cercaButton);
 
       expect(mockNavigate).toHaveBeenCalled();
     });
@@ -73,8 +73,8 @@ describe("Given an UserHomePage page", () => {
         </BrowserRouter>
       );
 
-      const deleteButton = screen.getByRole("button", { name: "Tanca sessió" });
-      userEvent.click(deleteButton);
+      const tancaButton = screen.getByRole("button", { name: "Tanca sessió" });
+      userEvent.click(tancaButton);
 
       expect(mockNavigate).toHaveBeenCalled();
     });
