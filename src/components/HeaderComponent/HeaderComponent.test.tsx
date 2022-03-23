@@ -3,6 +3,13 @@ import HeaderComponent from "./HeaderComponent";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import userEvent from "@testing-library/user-event";
+
+const mockNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
@@ -32,6 +39,23 @@ describe("Given a Header component", () => {
       const expectedButton = screen.getByRole("button");
 
       expect(expectedButton).toBeInTheDocument();
+    });
+  });
+
+  describe("When it is rendered and it renders the button Login", () => {
+    test("Then if clicked it should navigate to another url", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <HeaderComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const expectedButton = screen.getByRole("button");
+      userEvent.click(expectedButton);
+
+      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });
