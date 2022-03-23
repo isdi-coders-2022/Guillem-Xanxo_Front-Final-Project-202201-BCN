@@ -101,4 +101,33 @@ describe("Given a TripCardComponent component", () => {
       expect(mockNavigate).toHaveBeenCalled();
     });
   });
+
+  describe("When there is a visibility = 'user'", () => {
+    test.only("Then it should display a button Esborra", () => {
+      const trip = {
+        origen: "Barcelona",
+        desti: "Sort",
+        places: "3",
+        horaSortida: "18",
+        comentaris: "S'accepten animals",
+        dones: true,
+        data: "2018-02-12 19:23:45",
+        id: "1",
+        horaSortidaNumber: 1000,
+        dataNumber: 20220917,
+      };
+
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <TripCardComponent trip={trip} visibility="user" />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const esborraButton = screen.getByRole("button", { name: "Esborra" });
+
+      expect(esborraButton).toBeInTheDocument();
+    });
+  });
 });
