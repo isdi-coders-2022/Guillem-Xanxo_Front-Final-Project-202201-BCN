@@ -6,6 +6,11 @@ import { store } from "../../redux/store";
 import LoginComponent from "./LoginComponent";
 
 const mockUseDispatch = jest.fn();
+const mockNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
 
 jest.mock("react-redux", () => {
   return {
@@ -65,6 +70,23 @@ describe("Given a Login component", () => {
       userEvent.click(button);
 
       expect(mockUseDispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it is rendered and it renders the button Enrere", () => {
+    test("Then if clicked it should navigate to another url", () => {
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <LoginComponent />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const expectedButton = screen.getByRole("button", { name: "Enrere" });
+      userEvent.click(expectedButton);
+
+      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });
