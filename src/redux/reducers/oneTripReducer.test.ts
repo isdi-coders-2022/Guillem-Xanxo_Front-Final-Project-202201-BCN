@@ -40,4 +40,42 @@ describe("Given a OneTripReducer function", () => {
       expect(newState).toEqual(tripToGet);
     });
   });
+
+  describe("When it's called with a getThisTrip action with an action that does not exist", () => {
+    test("Then it should return a new state as the initial empty state", () => {
+      const currentTrip: TripReceived = {
+        origen: "",
+        desti: "",
+        places: "",
+        data: "",
+        dataNumber: 0,
+        horaSortida: "",
+        horaSortidaNumber: 0,
+        comentaris: "",
+        dones: false,
+        id: "",
+      };
+      const tripToGet: TripReceived = {
+        origen: "",
+        desti: "",
+        places: "",
+        data: "",
+        dataNumber: 0,
+        horaSortida: "",
+        horaSortidaNumber: 0,
+        comentaris: "",
+        dones: false,
+        id: "",
+      };
+
+      const action = {
+        type: "",
+        trip: tripToGet,
+      };
+
+      const newState = OneTripReducer(currentTrip, action);
+
+      expect(newState).toEqual(currentTrip);
+    });
+  });
 });
