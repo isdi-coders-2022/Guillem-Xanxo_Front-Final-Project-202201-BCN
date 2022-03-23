@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Transporta't Pallars
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a platform where people can post their private trips from everywhere to somewhere in Pallars region in Catalunya. The main aim is to aggregate all the messages in already existing chat groups in Whatsapp, Telegram and FB, so that anyone who wants to get a ride could search for it easily, sorted by date and in a single place.
 
-## Available Scripts
+It has been written in TypeScript and React Redux in order to profit from it being a web app. This way it can be easily accessible from any device and be crossplatform. Redux has been mandatory for this project as a final project in ISDI Coders bootcamp, but it prepare the app to be able to growth as the traffic does.
 
-In the project directory, you can run:
+Production site:[https://transportatpallars-guillem-xanxo.netlify.app/](Transporta't Pallars)
+REST API supporting this project: [https://github.com/isdi-coders-2022/Guillem-Xanxo_Back-Final-Project-202201-BCN](Project)
 
-### `npm start`
+## How to start as a developer/contributor
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Please, fork the project in orther to add features if you would like to contribute to the project. Once you have the GitHub repository forked and downloaded proceed:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm install`
 
-### `npm test`
+This command will install all npm packages listed in dependencies JSON.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm build``
 
-### `npm run build`
+This command will prepare and build the project for production.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Testing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It is aimed to unit test all components and pages. Testing has been done with Jest and React Testing library following the Given-When-Then schema to explain each test.
+To run all test run ` npm test`.
+To run a coverage test use `npm run coverage`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+SonarQube has been used as a static controll tool.
 
-### `npm run eject`
+### Data structure explanation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Trips
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**General**
+All interactions are designed to have its own redux path always that it represents a change in the state of trips or user.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Create a Trip**
+The page **CreateTripPage** in src/pages/ will render the component **CreateFormComponent** in path src/components/. This form, when submitted, will dispatch a request to the backend through the thunk sending the data as a Trip interface (in src/interfaces), where all data is captured as a string.
+The state for a created trip is called "trips".
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Load the existing trips in the database**
+Once the trips are created, they are stored in the database in a different schema than the trips sent. This is the reason why Trips fetched from the API are stored in the state getTrips and theis interface is TripReceived.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Load a single trip**
+The API also delivers single trip requests, out of the array structure. This fetches store the trip in the state called OneTrip.
