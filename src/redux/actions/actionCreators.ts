@@ -46,7 +46,7 @@ export const userLoginAction = (user: Login): userLogininterfaceAction => ({
 export const userRegisterAction = (
   user: Usuari
 ): userRegisterinterfaceAction => ({
-  type: actionTypes.userLogin,
+  type: actionTypes.userRegister,
   user,
 });
 
