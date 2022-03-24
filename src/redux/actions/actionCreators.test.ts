@@ -195,7 +195,7 @@ describe("Given a userRegisterAction action", () => {
       };
 
       const expectedAction = {
-        type: "user-login",
+        type: "user-register",
         user: registerUser,
       };
 

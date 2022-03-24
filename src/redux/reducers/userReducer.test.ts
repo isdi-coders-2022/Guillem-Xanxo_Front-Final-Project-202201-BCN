@@ -22,7 +22,8 @@ describe("Given a userReducer", () => {
   describe("When it receives a user like User", () => {
     test("Then it should return the user", () => {
       const user = { usuari: "", contrassenya: "", nom: "", telefon: "" };
-      const expectedUser = {
+      const registeredUser = { usuari: "", contrassenya: "" };
+      const User = {
         usuari: "conchi",
         contrassenya: "123123",
         nom: "Conchi",
@@ -30,12 +31,12 @@ describe("Given a userReducer", () => {
       };
       const action = {
         type: "user-register",
-        user: expectedUser,
+        user: User,
       };
 
       const newUser = userReducer(user, action);
 
-      expect(newUser).toEqual(expectedUser);
+      expect(newUser).toEqual(registeredUser);
     });
   });
 });

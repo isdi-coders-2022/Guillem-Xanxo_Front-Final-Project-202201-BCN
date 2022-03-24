@@ -37,7 +37,6 @@ const OneTripReducer = (
     newTripArray = { ...action.trip };
     return newTripArray;
   } else {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     newTripArray = { ...currentTrip };
     return newTripArray;
   }

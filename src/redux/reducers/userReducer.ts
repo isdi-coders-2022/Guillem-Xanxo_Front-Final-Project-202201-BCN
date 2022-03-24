@@ -18,7 +18,7 @@ const userReducer = (
       break;
 
     case actionTypes.userRegister:
-      loggedInUser = action.user;
+      loggedInUser = { usuari: "", contrassenya: "" };
       break;
 
     case actionTypes.cleanUser:
