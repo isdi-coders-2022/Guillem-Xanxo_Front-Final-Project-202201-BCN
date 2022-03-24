@@ -16,7 +16,7 @@ describe("App", function () {
   });
 
   it("should find the button Entra and click", function () {
-    cy.get("button").click;
+    cy.get("button").should("contain", "Entra").click;
   });
 });
 
