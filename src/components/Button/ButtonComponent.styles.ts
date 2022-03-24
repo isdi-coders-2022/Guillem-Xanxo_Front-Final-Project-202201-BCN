@@ -9,6 +9,10 @@ export const ButtonGeneric = styled.button`
   height: 35px;
   font-size: 20px;
   cursor: pointer;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 export const ButtonUsuari = styled(ButtonGeneric)`
@@ -21,6 +25,10 @@ export const ButtonUsuari = styled(ButtonGeneric)`
   align-items: center;
   justify-content: center;
   align-content: center;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 export const ButtonCreaViatge = styled(ButtonGeneric)`
@@ -30,6 +38,10 @@ export const ButtonCreaViatge = styled(ButtonGeneric)`
   background-color: white;
   margin: 20px;
   margin-bottom: 40px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 export const ButtonDetall = styled(ButtonGeneric)`
@@ -39,6 +51,10 @@ export const ButtonDetall = styled(ButtonGeneric)`
   background-color: white;
   margin: 10px;
   margin-bottom: 20px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 export const ButtonDelete = styled(ButtonGeneric)`
@@ -49,4 +65,8 @@ export const ButtonDelete = styled(ButtonGeneric)`
   background-color: white;
   margin: 10px;
   margin-bottom: 20px;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
 `;
